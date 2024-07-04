@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>ProfileAutomation.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ProfileAutomation.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">vdq</span><span class="s2">.</span><span class="s1">autogpm</span><span class="s2">.</span><span class="s1">automation</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">vdq</span><span class="s2">.</span><span class="s1">autogpm</span><span class="s2">.</span><span class="s1">api</span><span class="s2">.</span><span class="s1">Profile</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">vdq</span><span class="s2">.</span><span class="s1">autogpm</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">SeleniumUtils</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">vdq</span><span class="s2">.</span><span class="s1">autogpm</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">WaitUtils</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">com</span><span class="s2">.</span><span class="s1">vdq</span><span class="s2">.</span><span class="s1">autogpm</span><span class="s2">.</span><span class="s1">webdriver</span><span class="s2">.</span><span class="s1">WebDriverManager</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">openqa</span><span class="s2">.</span><span class="s1">selenium</span><span class="s2">.*;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">concurrent</span><span class="s2">.</span><span class="s1">TimeUnit</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">ProfileAutomation </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">WebDriverManager webDriverManager</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">WaitUtils waitUtils</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String okxPasswordXpath </span><span class="s2">= </span><span class="s3">&quot;//input[@type='password' or @id='password']&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String yourPassowrd </span><span class="s2">= </span><span class="s3">&quot;59Bachlieu@#&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String connectWalletButtonXpath </span><span class="s2">= </span><span class="s3">&quot;//button[@data-testid='ConnectButton']&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String wroingConnectWalletButtonXpath </span><span class="s2">= </span><span class="s3">&quot;//button[text()='Wrong network']&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String shadowHostSelector </span><span class="s2">= </span><span class="s3">&quot;div[data-testid='dynamic-modal-shadow']&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String shadowElementSelector </span><span class="s2">= </span><span class="s3">&quot;button[data-testid='ListTile']&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String selectBeraChainNetwork </span><span class="s2">= </span><span class="s3">&quot;button[data-testid='SelectNetworkButton']&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String swapTokensXpath </span><span class="s2">= </span><span class="s3">&quot;//button[contains(text(),'Swap Token')]&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String transferTo </span><span class="s2">= </span><span class="s3">&quot;(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[2]&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String listCoinNameXpath </span><span class="s2">= </span><span class="s3">&quot;//div[@role='dialog']//div[contains(@class,'max-h-')]//button//div[@class='flex flex-col']/span&quot;</span><span class="s2">;</span>
+    <span class="s0">public </span><span class="s1">ProfileAutomation</span><span class="s2">() {</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">webDriverManager </span><span class="s2">= </span><span class="s0">new </span><span class="s1">WebDriverManager</span><span class="s2">();</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">public void </span><span class="s1">runAutomation</span><span class="s2">(</span><span class="s1">Profile profile</span><span class="s2">) {</span>
+        <span class="s1">WebDriver driver </span><span class="s2">= </span><span class="s1">webDriverManager</span><span class="s2">.</span><span class="s1">initializeDriver</span><span class="s2">(</span><span class="s1">profile</span><span class="s2">);</span>
+        <span class="s1">driver</span><span class="s2">.</span><span class="s1">manage</span><span class="s2">().</span><span class="s1">timeouts</span><span class="s2">().</span><span class="s1">implicitlyWait</span><span class="s2">(</span><span class="s4">10</span><span class="s2">, </span><span class="s1">TimeUnit</span><span class="s2">.</span><span class="s1">SECONDS</span><span class="s2">);</span>
+        <span class="s0">this</span><span class="s2">.</span><span class="s1">waitUtils </span><span class="s2">= </span><span class="s0">new </span><span class="s1">WaitUtils</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s4">10</span><span class="s2">);</span>
+        <span class="s0">try </span><span class="s2">{</span>
+            <span class="s1">goToChromeExtention</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+            <span class="s1">interactOKX</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+            <span class="s1">beraChain</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+            <span class="s1">swapTokenAction</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+            <span class="s1">swapBeraToWBERA</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+        <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">Exception e</span><span class="s2">) {</span>
+            <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s2">();</span>
+        <span class="s2">} </span><span class="s0">finally </span><span class="s2">{</span>
+            <span class="s1">driver</span><span class="s2">.</span><span class="s1">quit</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">interactOKX</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">5000</span><span class="s2">);</span>
+        <span class="s1">WebElement okxInputElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">okxPasswordXpath</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">2000</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sendKeysSlowly</span><span class="s2">(</span><span class="s1">okxInputElm</span><span class="s2">, </span><span class="s1">yourPassowrd</span><span class="s2">, </span><span class="s4">300</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">2000</span><span class="s2">);</span>
+        <span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">okxPasswordXpath</span><span class="s2">).</span><span class="s1">sendKeys</span><span class="s2">(</span><span class="s1">Keys</span><span class="s2">.</span><span class="s1">ENTER</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">2000</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">swapBeraToWBERA</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
+        <span class="s1">WebElement fromElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">transferTo</span><span class="s2">);</span>
+        <span class="s1">fromElm</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">4000</span><span class="s2">);</span>
+        <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">WebElement</span><span class="s2">&gt; </span><span class="s1">webElementList </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementsByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">listCoinNameXpath</span><span class="s2">);</span>
+        <span class="s0">for </span><span class="s2">(</span><span class="s1">WebElement webElement </span><span class="s2">: </span><span class="s1">webElementList</span><span class="s2">) {</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">webElement</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">equals</span><span class="s2">(</span><span class="s3">&quot;WBERA&quot;</span><span class="s2">)) {</span>
+                <span class="s1">webElement</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">beraChain</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
+        <span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">openNewTab</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+        <span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">switchToTab</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s4">1</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">1000</span><span class="s2">);</span>
+        <span class="s1">driver</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">&quot;https://bartio.bex.berachain.com/&quot;</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">3000</span><span class="s2">);</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">isElementPresent</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">connectWalletButtonXpath</span><span class="s2">)) {</span>
+            <span class="s1">WebElement connectWalletButtonElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">connectWalletButtonXpath</span><span class="s2">);</span>
+            <span class="s1">connectWalletButtonElm</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+            <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">4000</span><span class="s2">);</span>
+            <span class="s1">WebElement shadowElement </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementInShadowDOM</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">shadowHostSelector</span><span class="s2">, </span><span class="s1">shadowElementSelector</span><span class="s2">);</span>
+            <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">2000</span><span class="s2">);</span>
+            <span class="s1">shadowElement</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+            <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">5000</span><span class="s2">);</span>
+            <span class="s1">WebElement beraChainNetwork </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementInShadowDOM</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">shadowHostSelector</span><span class="s2">, </span><span class="s1">selectBeraChainNetwork</span><span class="s2">);</span>
+            <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">1000</span><span class="s2">);</span>
+            <span class="s1">beraChainNetwork</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+        <span class="s2">} </span><span class="s0">else if </span><span class="s2">(</span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">isElementPresent</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">wroingConnectWalletButtonXpath</span><span class="s2">)) {</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;Click into Wrong Connect&quot;</span><span class="s2">);</span>
+            <span class="s1">WebElement wrongConnectWalletButtonElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">wroingConnectWalletButtonXpath</span><span class="s2">);</span>
+            <span class="s1">wrongConnectWalletButtonElm</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">swapTokenAction</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
+        <span class="s1">WebElement connectWalletButtonElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">swapTokensXpath</span><span class="s2">);</span>
+        <span class="s1">connectWalletButtonElm</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">5000</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">goToChromeExtention</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
+        <span class="s1">driver</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s3">&quot;chrome://extensions&quot;</span><span class="s2">);</span>
+        <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">2000</span><span class="s2">);</span>
+        <span class="s1">String idExtention </span><span class="s2">= </span><span class="s1">getIdOfExtention</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">);</span>
+        <span class="s1">String urlChrome </span><span class="s2">= </span><span class="s3">&quot;chrome-extension://&quot; </span><span class="s2">+ </span><span class="s1">idExtention </span><span class="s2">+ </span><span class="s3">&quot;/home.html#onboarding/welcome&quot;</span><span class="s2">;</span>
+        <span class="s1">driver</span><span class="s2">.</span><span class="s1">get</span><span class="s2">(</span><span class="s1">urlChrome</span><span class="s2">);</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">private </span><span class="s1">String getIdOfExtention</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
+        <span class="s1">JavascriptExecutor js </span><span class="s2">= (</span><span class="s1">JavascriptExecutor</span><span class="s2">) </span><span class="s1">driver</span><span class="s2">;</span>
+        <span class="s1">String script </span><span class="s2">= </span><span class="s3">&quot;var shadowRoot = document.querySelector('extensions-manager').shadowRoot;&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;shadowRoot = shadowRoot.querySelector('#viewManager');&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;shadowRoot = shadowRoot.querySelector('#items-list').shadowRoot;&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;var listItems = shadowRoot.querySelectorAll('extensions-item');&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;let extId = '';&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;listItems.forEach((item) =&gt; {&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;    const itemShadow = item.shadowRoot;&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;    const name = itemShadow.getElementById('name').innerText;&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;    const id = item.getAttribute('id');&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;    if (name.includes('OKX')) {&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;        extId = id;&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;    }&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;});&quot; </span><span class="s2">+</span>
+                <span class="s3">&quot;return extId;&quot;</span><span class="s2">;</span>
+        <span class="s1">String id </span><span class="s2">= (</span><span class="s1">String</span><span class="s2">) </span><span class="s1">js</span><span class="s2">.</span><span class="s1">executeScript</span><span class="s2">(</span><span class="s1">script</span><span class="s2">);</span>
+        <span class="s0">return </span><span class="s1">id</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

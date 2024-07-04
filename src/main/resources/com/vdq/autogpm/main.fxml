@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.vdq.autogpm.controller.MainController">
+
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Exit"/>
+        </Menu>
+        <Menu text="Settings">
+            <MenuItem text="Preferences"/>
+        </Menu>
+        <Menu text="Help">
+            <MenuItem text="About"/>
+        </Menu>
+    </MenuBar>
+
+    <HBox>
+        <TextField fx:id="urlField" visible="false" promptText="Enter URL"/>
+        <Button text="Tải dữ liệu" onAction="#handleGo"/>
+        <HBox>
+            <TextField fx:id="widthField" promptText="Width"/>
+            <TextField fx:id="heightField" promptText="height"/>
+            <TextField fx:id="profileOpen" promptText="Luồng"/>
+            <ComboBox fx:id="groupProfile" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose"/>
+        </HBox>
+    </HBox>
+
+    <TableView fx:id="profileTable">
+        <columns>
+            <TableColumn fx:id="selectColumn"/>
+            <TableColumn fx:id="nameColumn" text="Tên profile"/>
+            <TableColumn fx:id="statusColumn" text="Trạng thái"/>
+            <TableColumn fx:id="proxyColumn" text="Proxy"/>
+            <TableColumn fx:id="lastRunColumn" text="Lần chạy cuối"/>
+            <TableColumn fx:id="actionColumn" text="Action"/>
+        </columns>
+    </TableView>
+    <HBox >
+        <Button text="Khởi Chạy" onAction="#handleStart"/>
+        <Button text="Dừng" onAction="#handleStop"/>
+        <Button text="Profile" onAction="#nurtureProfile"/>
+
+
+<!--        <CheckBox fx:id="isSendEmail" text="Send?"/>-->
+    </HBox>
+    <TextArea fx:id="logArea" editable="false"
+              promptText="Log output"/>
+</VBox>
