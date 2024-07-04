@@ -17,41 +17,48 @@ public class ProfileAutomation {
     String urlHomeBeraChain = "https://bartio.bex.berachain.com/";
 
     //    XPath mật khẩu OKX
-    private String okxPasswordXpath = "//input[@type='password' or @id='password']";
+    private final String okxPasswordXpath = "//input[@type='password' or @id='password']";
     // Mật khẩu OKX (Chưa mã hóa)
-    private String yourPassowrd = "59Bachlieu@#";
+    private final String yourPassowrd = "VudqMeta1908@#";
     // Xpath nút kết nối ví
-    private String connectWalletButtonXpath = "//button[@data-testid='ConnectButton']";
+    private final String connectWalletButtonXpath = "//button[@data-testid='ConnectButton']";
     // Xpath Trạng thái kết  nối ví lỗi
-    private String wroingConnectWalletButtonXpath = "//button[text()='Wrong network']";
+    private final String wroingConnectWalletButtonXpath = "//button[text()='Wrong network']";
     // Xpath Shadow Popup
-    private String shadowHostSelector = "div[data-testid='dynamic-modal-shadow']";
+    private final String shadowHostSelector = "div[data-testid='dynamic-modal-shadow']";
 
-    private String buttonAdressWalletXpath = "(//nav//button[@aria-haspopup='dialog'])[1]";
-    private String shadowElementSelector = "button[data-testid='ListTile']";
+    private final String buttonAdressWalletXpath = "(//nav//button[@aria-haspopup='dialog'])[1]";
+    private final String shadowElementSelector = "button[data-testid='ListTile']";
     //
-    private String selectBeraChainNetwork = "button[data-testid='SelectNetworkButton']";
-    private String swapTokensXpath = "//button[contains(text(),'Swap Token')]";
-    private String transferTo = "(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[2]";
-    private String transferFrom = "(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[1]";
-    private String listCoinNameXpath = "//div[@role='dialog']//div[contains(@class,'max-h-')]//button//div[@class='flex flex-col']//span";
-    private String priceFromXpath = "(//input[@step='any' and @min])[1]";
+    private final String selectBeraChainNetwork = "button[data-testid='SelectNetworkButton']";
+    private final String swapTokensXpath = "//button[contains(text(),'Swap Token')]";
+    private final String transferTo = "(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[2]";
 
-    private String previewButtonXpath = "//div[@role='dialog' and @data-state='open']";
-    private String swapButtonXpath = "//button[text()='Wrap']";
-    private String dialogWattingWalletXpath = "//div[@role='dialog' and @data-state='open']";
+    private final String transferFrom = "(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[1]";
+    private final String listCoinNameXpath = "//div[@role='dialog']//div[contains(@class,'max-h-')]//button//div[@class='flex flex-col']//span";
+    private final String priceFromXpath = "(//input[@step='any' and @min])[1]";
 
-    private String buttonVerifyOkxXpath = "(//div[@class='_action-buttons_j3bvq_1']//button)[2]";
-    private String buttonStatusTransaction = "(//div[@role='dialog']//button)[2]";
-    private String statusTransaction = "//div[@role='dialog' and @data-state='open']//p";
-    private String iconStatusTrans = "//div[@role='dialog']//div//img";
+    private final String previewButtonXpath = "//div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]";
+    private final String swapButtonXpath = "//button[text()='Wrap']";
+    private final String dialogWattingWalletXpath = "//div[@role='dialog' and @data-state='open']";
+
+    private final String buttonVerifyOkxXpath = "(//div[@class='_action-buttons_j3bvq_1']//button)[2]";
+    private final String buttonStatusTransaction = "(//div[@role='dialog']//button)[2]";
+    private final String statusTransaction = "//div[@role='dialog' and @data-state='open']//p";
+    private final String iconStatusTrans = "//div[@role='dialog']//div//img";
 
     //XPATH
-    private String buttonMintXpath = "//div[@class='w-full']//button[@role='tab' and @data-state and text()='Mint']";
-    private String buttonRedeemXpath = "//div[@class='w-full']//button[@role='tab' and @data-state and text()='Redeem']";
-    private String buttonApproveCoinXpath = "(//button[contains(text(), 'Approve')])[1]";
-    private String buttonApproveInfiniteXpath = "(//button[contains(text(), 'Approve')])[2]";
-    private String buttonMintHoneyXpath = "(//div//button[text()='Mint'])[2]";
+    private final String buttonMintXpath = "//div[@class='w-full']//button[@role='tab' and @data-state and text()='Mint']";
+    private final String buttonRedeemXpath = "//div[@class='w-full']//button[@role='tab' and @data-state and text()='Redeem']";
+    private final String buttonApproveCoinXpath = "(//button[contains(text(), 'Approve')])[1]";
+    private final String buttonApproveInfiniteXpath = "(//button[contains(text(), 'Approve')])[2]";
+    private final String buttonMintHoneyXpath = "(//div//button[text()='Mint'])[2]";
+
+    private final String listCoinTopXpath = "//div[@role='dialog']//div[contains(@class,'flex-wrap')]//div";
+    private final String buttonPreviewButtonXpath = "//div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]";
+    private final String buttonSwapXpath = "//button[text()='Swap']";
+    private final String closeButtonXpath = "//div[@role='dialog']//button[@type='button']";
+    private final String changeSwapCoinXpath = "//div[@class='relative']//button";
 
     public ProfileAutomation() {
         this.webDriverManager = new WebDriverManager();
@@ -67,8 +74,8 @@ public class ProfileAutomation {
             interactOKX(driver);
             beraChain(driver);
             swapTokenAction(driver);
-//            performSwaps(driver);
-            performMint(driver);
+            performSwaps(driver);
+//            performMint(driver);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -91,7 +98,7 @@ public class ProfileAutomation {
         WebElement fromElm = SeleniumUtils.findElementByXPath(driver, transferTo);
         fromElm.click();
         waitUtils.sleepSecond(4000);
-        List<WebElement> webElementList = SeleniumUtils.findElementsByXPath(driver, listCoinNameXpath);
+        List<WebElement> webElementList = SeleniumUtils.findElementsByXPath(driver, listCoinTopXpath);
         for (WebElement webElement : webElementList) {
             if (webElement.getText().equals("WBERA")) {
                 System.out.println("Đang chọn Coin chuyển");
@@ -164,16 +171,34 @@ public class ProfileAutomation {
 
     }
 
-    private void swapCoin(WebDriver driver, String coinName, String price, int numSwaps) {
+    private void swapCoin(WebDriver driver, String coinName, String price, int numSwaps, int type) {
+        System.out.println("Bắt đầu chuyển coin");
+
         for (int i = 0; i < numSwaps; i++) {
-            WebElement fromElm = SeleniumUtils.findElementByXPath(driver, transferTo);
-            fromElm.click();
+            String currentCoin;
+            if (type == 0) {
+                WebElement fromElm = SeleniumUtils.findElementByXPath(driver, transferTo);
+                currentCoin = fromElm.getText();
+                fromElm.click();
+            } else {
+                WebElement fromElm = SeleniumUtils.findElementByXPath(driver, changeSwapCoinXpath);
+                fromElm.click();
+                waitUtils.sleepSecond(3000);
+                WebElement toElm = SeleniumUtils.findElementByXPath(driver, transferFrom);
+                System.out.println("Click vào ây");
+                currentCoin = toElm.getText();
+                toElm.click();
+            }
             waitUtils.sleepSecond(4000);
-            List<WebElement> webElementList = SeleniumUtils.findElementsByXPath(driver, listCoinNameXpath);
+            List<WebElement> webElementList = SeleniumUtils.findElementsByXPath(driver, listCoinTopXpath);
             for (WebElement webElement : webElementList) {
                 if (webElement.getText().equals(coinName)) {
                     System.out.println("Đang chọn Coin chuyển: " + coinName);
-                    webElement.click();
+                    if (currentCoin.equals(webElement.getText())) {
+                        SeleniumUtils.findElementByXPath(driver, closeButtonXpath).click();
+                    } else {
+                        webElement.click();
+                    }
                     WebElement priceFromElm = SeleniumUtils.findElementByXPath(driver, priceFromXpath);
                     waitUtils.sleepSecond(2000);
                     System.out.println("Nhập giá chuyển: " + price);
@@ -183,6 +208,11 @@ public class ProfileAutomation {
                     if (SeleniumUtils.isElementPresent(driver, previewButtonXpath)) {
                         System.out.println("Có nút Preview");
                         waitUtils.waitForClickability(By.xpath(previewButtonXpath));
+                        SeleniumUtils.findElementByXPath(driver, previewButtonXpath).click();
+                        waitUtils.sleepSecond(5000);
+                        waitUtils.waitForClickability(By.xpath(buttonSwapXpath));
+                        SeleniumUtils.findElementByXPath(driver, buttonSwapXpath).click();
+                        waitUtils.sleepSecond(3000);
                     } else if (SeleniumUtils.isElementPresent(driver, swapButtonXpath)) {
                         System.out.println("Có nút Swap");
                         SeleniumUtils.findElementByXPath(driver, swapButtonXpath).click();
@@ -236,6 +266,7 @@ public class ProfileAutomation {
                             }
                         }
                     }
+                    break;
                 }
             }
         }
@@ -243,10 +274,12 @@ public class ProfileAutomation {
 
 
     private void performSwaps(WebDriver driver) {
-        swapCoin(driver, "WBERA", "0.1", 1);
-        swapCoin(driver, "HONEY", "0.2", 1);
-        swapCoin(driver, "WBTC", "0.05", 1);
-        swapCoin(driver, "WETH", "0.03", 1);
+        swapCoin(driver, "WBERA", "0.1", 1, 0);
+//        swapCoin(driver, "HONEY", "0.7", 1, 0);
+//        swapCoin(driver, "WBTC", "0.05", 1, 0);
+//        swapCoin(driver, "WETH", "0.03", 1, 0);
+//        swapCoin(driver, "WBERA", "0.03", 1, 0);
+        swapCoin(driver, "HONEY", "2", 1, 1);
     }
 
     private void performMint(WebDriver driver) {
@@ -287,8 +320,6 @@ public class ProfileAutomation {
                 wrongConnectWalletButtonElm.click();
             }
         }
-
-
     }
 
     private void swapTokenAction(WebDriver driver) {
