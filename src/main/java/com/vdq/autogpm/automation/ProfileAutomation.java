@@ -19,7 +19,7 @@ public class ProfileAutomation {
     //    XPath mật khẩu OKX
     private String okxPasswordXpath = "//input[@type='password' or @id='password']";
     // Mật khẩu OKX (Chưa mã hóa)
-    private String yourPassowrd = "59Bachlieu@#";
+    private String yourPassowrd = "";
     // Xpath nút kết nối ví
     private String connectWalletButtonXpath = "//button[@data-testid='ConnectButton']";
     // Xpath Trạng thái kết  nối ví lỗi
