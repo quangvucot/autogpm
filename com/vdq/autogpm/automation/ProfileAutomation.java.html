@@ -38,7 +38,7 @@ ProfileAutomation.java</font>
     <span class="s0">private </span><span class="s1">String shadowElementSelector </span><span class="s2">= </span><span class="s3">&quot;button[data-testid='ListTile']&quot;</span><span class="s2">;</span>
     <span class="s0">private </span><span class="s1">String selectBeraChainNetwork </span><span class="s2">= </span><span class="s3">&quot;button[data-testid='SelectNetworkButton']&quot;</span><span class="s2">;</span>
     <span class="s0">private </span><span class="s1">String swapTokensXpath </span><span class="s2">= </span><span class="s3">&quot;//button[contains(text(),'Swap Token')]&quot;</span><span class="s2">;</span>
-    <span class="s0">private </span><span class="s1">String transferTo </span><span class="s2">= </span><span class="s3">&quot;(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[2]&quot;</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">String coinNameTranferXpath </span><span class="s2">= </span><span class="s3">&quot;(//button[contains(@class, 'items-center') and contains(@class, 'transition-duration-300')]//span[contains(@class,'truncate')])[2]&quot;</span><span class="s2">;</span>
     <span class="s0">private </span><span class="s1">String listCoinNameXpath </span><span class="s2">= </span><span class="s3">&quot;//div[@role='dialog']//div[contains(@class,'max-h-')]//button//div[@class='flex flex-col']/span&quot;</span><span class="s2">;</span>
     <span class="s0">public </span><span class="s1">ProfileAutomation</span><span class="s2">() {</span>
         <span class="s0">this</span><span class="s2">.</span><span class="s1">webDriverManager </span><span class="s2">= </span><span class="s0">new </span><span class="s1">WebDriverManager</span><span class="s2">();</span>
@@ -74,7 +74,7 @@ ProfileAutomation.java</font>
     <span class="s2">}</span>
 
     <span class="s0">private void </span><span class="s1">swapBeraToWBERA</span><span class="s2">(</span><span class="s1">WebDriver driver</span><span class="s2">) {</span>
-        <span class="s1">WebElement fromElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">transferTo</span><span class="s2">);</span>
+        <span class="s1">WebElement fromElm </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">coinNameTranferXpath</span><span class="s2">);</span>
         <span class="s1">fromElm</span><span class="s2">.</span><span class="s1">click</span><span class="s2">();</span>
         <span class="s1">waitUtils</span><span class="s2">.</span><span class="s1">sleepSecond</span><span class="s2">(</span><span class="s4">4000</span><span class="s2">);</span>
         <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">WebElement</span><span class="s2">&gt; </span><span class="s1">webElementList </span><span class="s2">= </span><span class="s1">SeleniumUtils</span><span class="s2">.</span><span class="s1">findElementsByXPath</span><span class="s2">(</span><span class="s1">driver</span><span class="s2">, </span><span class="s1">listCoinNameXpath</span><span class="s2">);</span>

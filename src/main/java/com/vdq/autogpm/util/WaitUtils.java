@@ -50,7 +50,7 @@ public class WaitUtils {
     }
 
     // Chờ đợi trong mấy giây
-    public void sleepSecond(long miliSecond) {
+    public void sleepMillis(long miliSecond) {
         try {
             Thread.sleep(miliSecond);
         } catch (InterruptedException e) {

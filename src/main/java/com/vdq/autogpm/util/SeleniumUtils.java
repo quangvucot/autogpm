@@ -1,12 +1,16 @@
 package com.vdq.autogpm.util;
 
+import com.sun.tools.javac.Main;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class SeleniumUtils {
 
@@ -79,13 +83,14 @@ public class SeleniumUtils {
     /**
      * Chuyển đổi giữa các tab.
      *
-     * @param driver Đối tượng WebDriver
+     * @param driver   Đối tượng WebDriver
      * @param tabIndex Chỉ số của tab muốn chuyển đến (bắt đầu từ 0)
      */
     public static void switchToTab(WebDriver driver, int tabIndex) {
         List<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabIndex));
     }
+
     /**
      * Lấy danh sách các tab hiện tại.
      *
@@ -99,12 +104,13 @@ public class SeleniumUtils {
     /**
      * Chuyển vào một iframe.
      *
-     * @param driver Đối tượng WebDriver
+     * @param driver        Đối tượng WebDriver
      * @param iframeElement WebElement của iframe
      */
     public static void switchToIframe(WebDriver driver, WebElement iframeElement) {
         driver.switchTo().frame(iframeElement);
     }
+
     /**
      * Chuyển ra khỏi iframe về nội dung chính.
      *
@@ -118,7 +124,7 @@ public class SeleniumUtils {
      * Kiểm tra sự tồn tại của một phần tử bằng XPath.
      *
      * @param driver Đối tượng WebDriver
-     * @param xpath XPath của phần tử cần kiểm tra
+     * @param xpath  XPath của phần tử cần kiểm tra
      * @return true nếu phần tử tồn tại, ngược lại false
      */
     public static boolean isElementPresent(WebDriver driver, String xpath) {
@@ -129,8 +135,8 @@ public class SeleniumUtils {
     /**
      * Tìm một phần tử trong Shadow DOM bằng JavaScript.
      *
-     * @param driver Đối tượng WebDriver
-     * @param shadowHostSelector CSS selector của phần tử chứa Shadow DOM (Shadow host)
+     * @param driver                Đối tượng WebDriver
+     * @param shadowHostSelector    CSS selector của phần tử chứa Shadow DOM (Shadow host)
      * @param shadowElementSelector CSS selector của phần tử bên trong Shadow DOM cần tìm
      * @return WebElement tìm được trong Shadow DOM
      */
@@ -143,8 +149,8 @@ public class SeleniumUtils {
     /**
      * Kiểm tra xem một phần tử trong Shadow DOM có tồn tại không.
      *
-     * @param driver Đối tượng WebDriver
-     * @param shadowHostSelector CSS selector của phần tử chứa Shadow DOM (Shadow host)
+     * @param driver                Đối tượng WebDriver
+     * @param shadowHostSelector    CSS selector của phần tử chứa Shadow DOM (Shadow host)
      * @param shadowElementSelector CSS selector của phần tử bên trong Shadow DOM cần kiểm tra
      * @return true nếu phần tử tồn tại, ngược lại false
      */
@@ -161,5 +167,26 @@ public class SeleniumUtils {
      */
     public static void reloadPage(WebDriver driver) {
         driver.navigate().refresh();
+    }
+
+
+    public static String getProperty() {
+        Properties properties = new Properties();
+
+        try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
+            if (input == null) {
+                System.out.println("Sorry, unable to find config.properties");
+                return "";
+            }
+
+            // Load a properties file from class path, inside static method
+            properties.load(input);
+
+            // Get the property value and print it out
+            String encryptedPassword = properties.getProperty("db.password");
+            return encryptedPassword;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
