@@ -3,6 +3,7 @@ package com.vdq.autogpm.service;
 
 import com.vdq.autogpm.api.ApiClient;
 import com.vdq.autogpm.api.ApiService;
+import com.vdq.autogpm.api.Group;
 import com.vdq.autogpm.api.Profile;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,6 +26,12 @@ public class ProfileService {
     public void fetchProfiles(Callback<ApiService.ApiResponse> callback) {
         apiService.getProfiles().enqueue(callback);
     }
+    public void fetchProfilesByName(Callback<ApiService.ApiResponse> callback, String groupName) {
+        apiService.getProfilesByGroup(groupName).enqueue(callback);
+    }
+    public void fetchGroups(Callback<ApiService.ApiResponseGroup> callback) {
+        apiService.getGroup().enqueue(callback);
+    }
 
     public void startProfile(String profileId, Callback<Profile> callback) {
 
@@ -37,7 +44,7 @@ public class ProfileService {
     public void getProfile(Profile profile) {
         Call<ApiService.OpenProfileResponse> call = apiService.openProfile(profile.getId());
         call.enqueue(new Callback<ApiService.OpenProfileResponse>() {
-            @Override 
+            @Override
             public void onResponse(Call<ApiService.OpenProfileResponse> call, Response<ApiService.OpenProfileResponse> response) {
                 if (response.isSuccessful()) {
                     assert response.body() != null;

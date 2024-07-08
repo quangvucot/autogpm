@@ -13,6 +13,7 @@ import java.time.Duration;
 public class WebDriverManager {
 
     public WebDriver initializeDriver(Profile profile) {
+        System.out.println("Path " + profile.getDriver_path());
         ChromeDriverService service = new ChromeDriverService.Builder().usingDriverExecutable(new File(profile.getDriver_path())).usingAnyFreePort()
                 .build();
         ChromeOptions options = new ChromeOptions();

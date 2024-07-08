@@ -9,12 +9,17 @@ import java.util.List;
 
 public interface ApiService {
 
-	@GET("profiles?per_page=200")
+	@GET("profiles?per_page=1000")
 	Call<ApiResponse> getProfiles();
 
 	@GET("profiles/start/{id}")
 	Call<OpenProfileResponse> openProfile(@Path("id") String id);
 
+	@GET("groups")
+	Call<ApiResponseGroup> getGroup();
+
+	@GET("profiles")
+	Call<ApiResponse> getProfilesByGroup(@Query("group_id") String group);
 
 	public class ApiResponse {
 		public boolean success;
@@ -61,5 +66,10 @@ public interface ApiService {
 		public void setProfileId(String profileId) {
 			this.profileId = profileId;
 		}
+	}
+	public class ApiResponseGroup {
+		public boolean success;
+		public List<Group> data;
+		public String message;
 	}
 }

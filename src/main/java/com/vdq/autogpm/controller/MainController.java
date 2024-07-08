@@ -1,8 +1,10 @@
 package com.vdq.autogpm.controller;
 
 
+import com.vdq.autogpm.api.Group;
 import com.vdq.autogpm.api.Profile;
 import com.vdq.autogpm.automation.ProfileAutomation;
+import com.vdq.autogpm.automation.ProfileTask;
 import com.vdq.autogpm.executor.ProfileExecutor;
 import com.vdq.autogpm.service.ProfileService;
 import com.vdq.autogpm.util.ExcelUtils;
@@ -17,6 +19,7 @@ import javafx.scene.control.skin.TableHeaderRow;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -57,6 +60,7 @@ public class MainController {
     private ProfileService profileService;
     private ProfileAutomation profileAutomation;
     private ProfileExecutor profileExecutor;
+    private Map<String, String> groupProfiles;
 
     public void turnOffResizeColumn() {
         nameColumn.setResizable(false);
@@ -126,12 +130,23 @@ public class MainController {
 
     @FXML
     private void handleGo() {
-        List<Profile> profileList = profileController.fetchProfiles();
-        if (profileList != null) {
-            profileTable.getItems().setAll(profileList);
-            List<String> groupList = profileList.stream().map(Profile::getGroup_id).distinct().collect(Collectors.toList());
-            groupProfile.getItems().addAll(groupList);
-        }
+        profileController.fetchProfiles().thenAccept(profiles -> {
+            profileTable.getItems().setAll(profiles);
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+        profileController.getGroups().thenAccept(groups -> {
+            groupProfiles = new HashMap<>();
+            for (int i = 0; i < groups.size(); i++) {
+                groupProfile.getItems().add(groups.get(i).getName());
+                groupProfiles.put(groups.get(i).getId(), groups.get(i).getName());
+            }
+        }).exceptionally(ex -> {
+            ex.printStackTrace();
+            return null;
+        });
+
     }
 
     public List<Profile> getSelectedProfiles(List<Profile> profiles) {
@@ -148,52 +163,53 @@ public class MainController {
 
     @FXML
     private void handleStop() {
-        ExcelUtils excelUtils = new ExcelUtils("C:\\Users\\Vu\\Documents\\test_my_code.xlsx");
-        Map<String, Map<String, String>> excelData = excelUtils.readExcel();
 
-        // In ra tất cả dữ liệu đã đọc từ tệp Excel
-        for (Map.Entry<String, Map<String, String>> entry : excelData.entrySet()) {
-            String profileName = entry.getKey();
-            Map<String, String> profileData = entry.getValue();
-            System.out.println("Profile Name: " + profileName);
-            for (Map.Entry<String, String> dataEntry : profileData.entrySet()) {
-                System.out.println(dataEntry.getKey() + ": " + dataEntry.getValue());
-            }
-            System.out.println("--------------------------");
-
-
-        }
-        String targetEmail = "hungnguyen@gmail.com";
-
-        if (excelData.containsKey(targetEmail)) {
-
-        } else {
-            System.out.println("Profile with email " + targetEmail + " not found.");
-        }
+//        ExcelUtils excelUtils = new ExcelUtils("C:\\Users\\Vu\\Documents\\test_my_code.xlsx");
+//        Map<String, Map<String, String>> excelData = excelUtils.readExcel();
+//
+//        // In ra tất cả dữ liệu đã đọc từ tệp Excel
+//        for (Map.Entry<String, Map<String, String>> entry : excelData.entrySet()) {
+//            String profileName = entry.getKey();
+//            Map<String, String> profileData = entry.getValue();
+//            System.out.println("Profile Name: " + profileName);
+//            for (Map.Entry<String, String> dataEntry : profileData.entrySet()) {
+//                System.out.println(dataEntry.getKey() + ": " + dataEntry.getValue());
+//            }
+//            System.out.println("--------------------------");
+//
+//
+//        }
+//        String targetEmail = "hungnguyen@gmail.com";
+//
+//        if (excelData.containsKey(targetEmail)) {
+//
+//        } else {
+//            System.out.println("Profile with email " + targetEmail + " not found.");
+//        }
     }
 
     @FXML
     private void nurtureProfile() {
-        List<Profile> selectedProfiles = profileTable.getSelectionModel().getSelectedItems();
+        List<Profile> selectedProfiles = getSelectedProfiles(profileTable.getItems());
         if (selectedProfiles.isEmpty()) {
             System.out.println("No profiles selected.");
             return;
         }
-
-        System.out.println("Số lượng profile chon " + selectedProfiles.size());
         List<CompletableFuture<Profile>> futures = selectedProfiles.stream()
-                .map(profile -> CompletableFuture.supplyAsync(() -> profileService.getProfileData(profile)
-                        .thenCompose(profileOpened -> CompletableFuture.runAsync(() -> {
-                                    System.out.println("Running automation for profile: " + profileOpened.getId());
-                                    profileAutomation.runAutomation(profileOpened);
-                                    System.out.println("Finished automation for profile: " + profileOpened.getId());
-                                }, profileExecutor.getExecutorService())
-                                .thenApply(v -> profileOpened)).join(), profileExecutor.getExecutorService()))
-                .collect(Collectors.toList());
+                .map(profile -> CompletableFuture.supplyAsync(() -> {
+                    ProfileTask task = new ProfileTask(profile, profileService, profileAutomation);
+                    try {
+                        return task.call();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }, profileExecutor.getExecutorService()))
+                .toList();
 
         CompletableFuture<Void> allOf = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
         allOf.thenRun(() -> {
             System.out.println("All profiles have been processed.");
+            profileExecutor.shutdown();
         }).exceptionally(ex -> {
             ex.printStackTrace();
             return null;
@@ -212,26 +228,23 @@ public class MainController {
     }
 
     public void selectDropdown() {
-        groupProfile.getItems().setAll("Apple", "Orange", "Pear");
+        groupProfile.valueProperty().addListener((observable, oldValue, newValue) -> {
 
-        groupProfile.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> selected, String oldFruit, String newFruit) {
-                if (oldFruit != null) {
-                    switch (oldFruit) {
-                        case "Apple":
-                            System.out.println("Apple");
-                            break;
-                        case "Orange":
-                            System.out.println("Orange");
-                            break;
-                        case "Pear":
-                            System.out.println("Pear");
-                            break;
-                    }
+            for (String profileId : groupProfiles.keySet()) {
+                if (groupProfiles.get(profileId).equals(newValue)) {
+                    System.out.println("Profile ID " +profileId);
+                    profileController.fetchProfilesByGroup(profileId).thenAccept(profiles -> {
+                        profileTable.getItems().clear();
+                        profileTable.getItems().setAll(profiles);
+                    }).exceptionally(ex -> {
+                        ex.printStackTrace();
+                        return null;
+                    });
+                    break;
                 }
 
             }
+
         });
     }
 }
