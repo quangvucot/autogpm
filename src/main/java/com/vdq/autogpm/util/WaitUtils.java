@@ -1,6 +1,7 @@
 package com.vdq.autogpm.util;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -19,11 +20,22 @@ public class WaitUtils {
     }
 
     public WebElement waitForVisibility(By locator) {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        }catch (Exception e) {
+            return null;
+        }
+
     }
+
     // Chờ một phần tử có the click được
     public WebElement waitForClickability(By locator) {
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        try {
+            return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        } catch (TimeoutException e) {
+            System.out.println("Element not clickable within the timeout period: " + locator);
+            return null;
+        }
     }
 
     public void waitForUrlContains(String fraction) {

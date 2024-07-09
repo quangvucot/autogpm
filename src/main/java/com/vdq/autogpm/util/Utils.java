@@ -3,6 +3,7 @@ package com.vdq.autogpm.util;
 import com.vdq.autogpm.ui.MainApp;
 
 import java.io.File;
+import java.util.Random;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
@@ -29,5 +30,12 @@ public class Utils {
         } catch (Exception e) {
 
         }
+    }
+
+    public static double randomValue(double start, double end) {
+        Random random = new Random();
+        double randomValue = start + (end * random.nextDouble());
+        randomValue = Math.round(randomValue * 10.0) / 10.0;
+        return randomValue;
     }
 }

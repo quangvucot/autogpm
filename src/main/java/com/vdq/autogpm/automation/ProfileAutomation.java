@@ -2,24 +2,25 @@ package com.vdq.autogpm.automation;
 
 import com.vdq.autogpm.api.Profile;
 import com.vdq.autogpm.util.SeleniumUtils;
+import com.vdq.autogpm.util.Utils;
 import com.vdq.autogpm.util.WaitUtils;
 import com.vdq.autogpm.webdriver.WebDriverManager;
+import okhttp3.internal.Util;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class ProfileAutomation {
 
-    private Map<String, List<String>> coinSwaps;
+    private static Map<String, List<String>> coinSwaps;
 
     String urlHomeBeraChain = "https://bartio.bex.berachain.com/";
     //    XPath mật khẩu OKX
     private final String okxPasswordXpath = "//input[@type='password' or @id='password']";
     // Mật khẩu OKX (Chưa mã hóa)
-    private final String yourPassowrd = "";
+    private final String yourPassowrd = "VudqMeta1908@#";
     // Xpath nút kết nối ví
     private final String connectWalletButtonXpath = "//button[@data-testid='ConnectButton']";
     // Xpath Trạng thái kết  nối ví lỗi
@@ -77,11 +78,10 @@ public class ProfileAutomation {
     private final String rountNotFoundXpath = "//div[@role='alert']//h5[text()='Route Not Found']";
 
     public ProfileAutomation() {
-        this.coinSwaps = initializeCoinSwaps();
     }
 
     public void runAutomation(WebDriver driver) {
-
+        coinSwaps = initializeCoinSwaps();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WaitUtils waitUtils = new WaitUtils(driver, 10);
         try {
@@ -231,7 +231,7 @@ public class ProfileAutomation {
             if (fromCoin.equals("BERA")) {
                 swapCoins(driver, fromCoin, toCoins, "0.3", 1, waitUtils);
             } else {
-                swapCoins(driver, fromCoin, toCoins, "1", 1, waitUtils);
+                swapCoins(driver, fromCoin, toCoins, String.valueOf(Utils.randomValue(1.0, 3.0)), 1, waitUtils);
             }
 
         }
@@ -246,7 +246,7 @@ public class ProfileAutomation {
         waitUtils.sleepMillis(1000);
         driver.get(urlHomeBeraChain);
         waitUtils.sleepMillis(3000);
-        waitUtils.waitForElementVisible(By.xpath(buttonAdressWalletXpath), 10);
+        waitUtils.waitForElementVisible(By.xpath(buttonAdressWalletXpath), 5);
 
         if (SeleniumUtils.isElementPresent(driver, connectWalletButtonXpath)) {
             WebElement connectWalletButtonElm = SeleniumUtils.findElementByXPath(driver, connectWalletButtonXpath);
@@ -476,7 +476,8 @@ public class ProfileAutomation {
 
 
     public void swapCoins(WebDriver driver, String fromCoin, List<String> toCoins, String price, int numSwaps, WaitUtils waitUtils) {
-        for (String toCoin : toCoins) {
+        List<String> randomToCoins = getRandomCoins(toCoins);
+        for (String toCoin : randomToCoins) {
             if (!fromCoin.equals(toCoin)) {
                 for (int i = 0; i < numSwaps; i++) {
                     System.out.println("Bắt đầu chuyển từ " + fromCoin + " sang " + toCoin);
@@ -500,6 +501,7 @@ public class ProfileAutomation {
         if (tranferCoinName.equalsIgnoreCase(fromCoin)) {
             System.out.println("Hiện tại coin chuyển trùng với coin chẩn bị chọn -> Chỉ cần chọn coin nhân thôi ");
             if (!receiverCoinName.equalsIgnoreCase(toCoin)) {
+                System.out.println("Tien hanh chon coin");
                 selectCoin(driver, toCoin, coinNameReceiverXpath, waitUtils);
             }
             enterPrice(driver, price, waitUtils);
@@ -731,5 +733,13 @@ public class ProfileAutomation {
             approveTransaction(driver, buttonSwapXpath, waitUtils);
         }
     }
+
+
+    private List<String> getRandomCoins(List<String> toCoins) {
+        List<String> shuffledToCoins = new ArrayList<>(toCoins);
+        Collections.shuffle(shuffledToCoins, new Random());
+        return shuffledToCoins;
+    }
+
 }
 
