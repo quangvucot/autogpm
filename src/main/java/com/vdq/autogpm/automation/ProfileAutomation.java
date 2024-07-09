@@ -20,7 +20,7 @@ public class ProfileAutomation {
     //    XPath mật khẩu OKX
     private final String okxPasswordXpath = "//input[@type='password' or @id='password']";
     // Mật khẩu OKX (Chưa mã hóa)
-    private final String yourPassowrd = "VudqMeta1908@#";
+    private final String yourPassowrd = "59Bachlieu@#";
     // Xpath nút kết nối ví
     private final String connectWalletButtonXpath = "//button[@data-testid='ConnectButton']";
     // Xpath Trạng thái kết  nối ví lỗi
@@ -102,7 +102,8 @@ public class ProfileAutomation {
         Hàm đăng nhập ví OKX
      */
     private void interactOKX(WebDriver driver, WaitUtils waitUtils) {
-        waitUtils.sleepMillis(5000);
+        waitUtils.sleepMillis(2000);
+        waitUtils.waitForElementVisible(By.xpath(okxPasswordXpath), 30);
         WebElement okxInputElm = SeleniumUtils.findElementByXPath(driver, okxPasswordXpath);
         waitUtils.sleepMillis(2000);
         waitUtils.sendKeysSlowly(okxInputElm, yourPassowrd, 300);
@@ -110,107 +111,6 @@ public class ProfileAutomation {
         SeleniumUtils.findElementByXPath(driver, okxPasswordXpath).sendKeys(Keys.ENTER);
         waitUtils.sleepMillis(2000);
     }
-//    private void swapCoin(String coinName, String price, int numSwaps, int type) {
-//        System.out.println("Bắt đầu chuyển coin");
-//        System.out.println("Property " + SeleniumUtils.getProperty());
-//
-//        for (int i = 0; i < numSwaps; i++) {
-//            String currentCoin;
-//            if (type == 0) {
-//                WebElement fromElm = SeleniumUtils.findElementByXPath(driver, coinNameTranferXpath);
-//                currentCoin = fromElm.getText();
-//                fromElm.click();
-//            } else {
-//                WebElement fromElm = SeleniumUtils.findElementByXPath(driver, changeSwapCoinXpath);
-//                fromElm.click();
-//                waitUtils.sleepMillis(3000);
-//                WebElement toElm = SeleniumUtils.findElementByXPath(driver, coinNameReceiverXpath);
-//                System.out.println("Click vào đây");
-//                currentCoin = toElm.getText();
-//                toElm.click();
-//            }
-//            waitUtils.sleepMillis(4000);
-//            List<WebElement> webElementList = SeleniumUtils.findElementsByXPath(driver, listCoinTopXpath);
-//            for (WebElement webElement : webElementList) {
-//                if (webElement.getText().equals(coinName)) {
-//                    System.out.println("Đang chọn Coin chuyển: " + coinName);
-//                    if (currentCoin.equals(webElement.getText())) {
-//                        SeleniumUtils.findElementByXPath(driver, closeButtonXpath).click();
-//                    } else {
-//                        webElement.click();
-//                    }
-//                    WebElement priceFromElm = SeleniumUtils.findElementByXPath(driver, priceFromXpath);
-//                    waitUtils.sleepMillis(2000);
-//                    System.out.println("Nhập giá chuyển: " + price);
-//                    priceFromElm.sendKeys(price);
-//                    waitUtils.sleepMillis(3000);
-//
-//                    if (SeleniumUtils.isElementPresent(driver, previewButtonXpath)) {
-//                        System.out.println("Có nút Preview");
-//                        waitUtils.waitForClickability(By.xpath(previewButtonXpath));
-//                        SeleniumUtils.findElementByXPath(driver, previewButtonXpath).click();
-//                        waitUtils.sleepMillis(5000);
-//                        waitUtils.waitForClickability(By.xpath(buttonSwapXpath));
-//                        SeleniumUtils.findElementByXPath(driver, buttonSwapXpath).click();
-//                        waitUtils.sleepMillis(3000);
-//                    } else if (SeleniumUtils.isElementPresent(driver, swapButtonXpath)) {
-//                        System.out.println("Có nút Swap");
-//                        SeleniumUtils.findElementByXPath(driver, swapButtonXpath).click();
-//                    }
-//                    waitUtils.sleepMillis(5000);
-//                    waitUtils.waitForElementVisible(By.xpath(dialogWattingWalletXpath), 10);
-//
-//                    // Kiểm tra xem có dialog thông báo đang xác nhận chuyển tiền bên Bera không?
-//                    if (SeleniumUtils.isElementPresent(driver, dialogWattingWalletXpath)) {
-//                        System.out.println("Có hiển thị thông báo Watting Transaction");
-//                        // Có hiển thị thông báo Watting Transaction
-//                        System.out.println("Chuyển sang Tab OKX để xác nhận chuyển tiền");
-//                        SeleniumUtils.switchToTab(driver, 0);
-//                        waitUtils.sleepMillis(3000);
-//                        driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
-//                        waitUtils.sleepMillis(3000);
-//                        waitUtils.waitForElementVisible(By.xpath(buttonVerifyOkxXpath), 10);
-//
-//                        // Kiểm tra xem có hiển thị nút xác nhận bên ví OKX không?
-//                        if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
-//                            System.out.println("Có nút xác nhận chuyển tiền bên OKX");
-//                            waitUtils.sleepMillis(5000);
-//                            SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
-//                            System.out.println("Đã click vào nút xác nhận chuyển tiền");
-//                            waitUtils.sleepMillis(5000);
-//                            System.out.println("Chuyển sang tab thứ nhất xem trạng thái chuyển tiền");
-//                            SeleniumUtils.switchToTab(driver, 1);
-//                            waitUtils.sleepMillis(4000);
-//                            waitUtils.waitForElementVisible(By.xpath(buttonStatusTransaction), 10);
-//
-//                            if (SeleniumUtils.isElementPresent(driver, buttonStatusTransaction)) {
-//                                System.out.println("Có dialog trạng thái chuyển tiền");
-//                                waitUtils.waitForElementVisible(By.xpath(iconStatusTrans), 20);
-//                                String transValue = SeleniumUtils.findElementByXPath(driver, statusTransaction).getText();
-//                                System.out.println("Trạng thái chuyển tiền: " + transValue);
-//                                if (transValue.equalsIgnoreCase("Transaction pending")) {
-//                                    waitUtils.waitForElementVisible(By.xpath(iconStatusTrans), 20);
-//                                }
-//                                transValue = SeleniumUtils.findElementByXPath(driver, statusTransaction).getText();
-//                                if (transValue.equalsIgnoreCase("Transaction Success")) {
-//                                    System.out.println("Chuyển thành công -> Đóng Popup");
-//                                    waitUtils.sleepMillis(3000);
-//                                    SeleniumUtils.findElementByXPath(driver, buttonStatusTransaction).click();
-//                                    waitUtils.sleepMillis(3000);
-//                                } else {
-//                                    System.out.println("Chuyển thất bại -> Đóng Popup");
-//                                    waitUtils.sleepMillis(3000);
-//                                    SeleniumUtils.findElementByXPath(driver, buttonStatusTransaction).click();
-//                                    waitUtils.sleepMillis(3000);
-//                                }
-//                            }
-//                        }
-//                    }
-//                    break;
-//                }
-//            }
-//        }
-//    }
 
     // Danh sách các đồng Coin Can Chuyen
     private Map<String, List<String>> initializeCoinSwaps() {
@@ -245,7 +145,14 @@ public class ProfileAutomation {
         SeleniumUtils.switchToTab(driver, 1);
         waitUtils.sleepMillis(1000);
         driver.get(urlHomeBeraChain);
+        String currentUrl = driver.getCurrentUrl();
         waitUtils.sleepMillis(3000);
+        if (currentUrl.equals("about:blank")) {
+            driver.get(urlHomeBeraChain);
+            waitUtils.sleepMillis(3000);
+        } else {
+            System.out.println("Đã truy cập URL: " + currentUrl);
+        }
         waitUtils.waitForElementVisible(By.xpath(buttonAdressWalletXpath), 5);
 
         if (SeleniumUtils.isElementPresent(driver, connectWalletButtonXpath)) {
@@ -454,20 +361,7 @@ public class ProfileAutomation {
 
     private String getIdOfExtention(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        String script = "var shadowRoot = document.querySelector('extensions-manager').shadowRoot;" +
-                "shadowRoot = shadowRoot.querySelector('#viewManager');" +
-                "shadowRoot = shadowRoot.querySelector('#items-list').shadowRoot;" +
-                "var listItems = shadowRoot.querySelectorAll('extensions-item');" +
-                "let extId = '';" +
-                "listItems.forEach((item) => {" +
-                "    const itemShadow = item.shadowRoot;" +
-                "    const name = itemShadow.getElementById('name').innerText;" +
-                "    const id = item.getAttribute('id');" +
-                "    if (name.includes('OKX')) {" +
-                "        extId = id;" +
-                "    }" +
-                "});" +
-                "return extId;";
+        String script = "var shadowRoot = document.querySelector('extensions-manager').shadowRoot;" + "shadowRoot = shadowRoot.querySelector('#viewManager');" + "shadowRoot = shadowRoot.querySelector('#items-list').shadowRoot;" + "var listItems = shadowRoot.querySelectorAll('extensions-item');" + "let extId = '';" + "listItems.forEach((item) => {" + "    const itemShadow = item.shadowRoot;" + "    const name = itemShadow.getElementById('name').innerText;" + "    const id = item.getAttribute('id');" + "    if (name.includes('OKX')) {" + "        extId = id;" + "    }" + "});" + "return extId;";
         String id = (String) js.executeScript(script);
         return id;
     }
@@ -493,16 +387,18 @@ public class ProfileAutomation {
         // Lấy ra tên coin hiện tại
         String receiverCoinName = getCurrentCoin(driver, coinNameReceiverXpath);
         String tranferCoinName = getCurrentCoin(driver, coinNameTranferXpath);
-        System.out.println("Tên coin chuyển: " + tranferCoinName);
-        System.out.println("Tên coin nhận: " + receiverCoinName);
-        System.out.println("To Coin " + toCoin);
+        System.out.println("Tên coin chuyển Hien tai: " + tranferCoinName);
+        System.out.println("Tên coin nhận hiện taại: " + receiverCoinName);
+        System.out.println("To chuyen tiep theo" + toCoin);
         waitUtils.sleepMillis(2000);
         // Coin nhan trung voi coin gui
         if (tranferCoinName.equalsIgnoreCase(fromCoin)) {
             System.out.println("Hiện tại coin chuyển trùng với coin chẩn bị chọn -> Chỉ cần chọn coin nhân thôi ");
             if (!receiverCoinName.equalsIgnoreCase(toCoin)) {
                 System.out.println("Tien hanh chon coin");
+                System.out.println("Day la To Coin " + toCoin);
                 selectCoin(driver, toCoin, coinNameReceiverXpath, waitUtils);
+
             }
             enterPrice(driver, price, waitUtils);
             if (checkNotEnoughtMoney(driver)) {
@@ -539,32 +435,51 @@ public class ProfileAutomation {
     }
 
     private boolean selectCoin(WebDriver driver, String coinName, String xpathCoinName, WaitUtils waitUtils) {
-        WebElement fromElm = SeleniumUtils.findElementByXPath(driver, xpathCoinName);
-        waitUtils.waitForClickability(By.xpath(xpathCoinName));
-        fromElm.click();
+        System.out.println("Click vao nut chon coin");
+        try {
+            WebElement fromElm = SeleniumUtils.findElementByXPath(driver, xpathCoinName);
+            waitUtils.waitForClickability(By.xpath(xpathCoinName));
+            fromElm.click();
+        } catch (ElementClickInterceptedException e) {
+            System.out.println("Khong the click vao button Select Coin" + e.getMessage());
+        }
         waitUtils.sleepMillis(3000);
+
         List<WebElement> webElementList = SeleniumUtils.findElementsByXPath(driver, listCoinTopXpath);
         for (WebElement webElement : webElementList) {
-            if (webElement.getText().equals(coinName)) {
-                System.out.println("Đang chọn Coin chuyển: " + coinName);
-                webElement.click();
-                return true; // Trả về true nếu chọn đồng coin thành công
+            System.out.println("test: " + webElement.getText());
+            System.out.println("test 1: " + coinName);
+            if (webElement.getText().equalsIgnoreCase(coinName)) {
+                try {
+                    System.out.println("webElement.getText(): " + webElement.getText());
+                    waitUtils.sleepMillis(1000);
+                    webElement.click();
+                    return true; // Trả về true nếu chọn đồng coin thành công
+                } catch (TimeoutException e) {
+                    System.out.println("Element is not clickable within the timeout period: " + e.getMessage());
+                } catch (ElementNotInteractableException e) {
+                    System.out.println("Element is not interactable: " + e.getMessage());
+                }
             }
         }
         return false; // Trả về false nếu không tìm thấy đồng coin
     }
 
     private void enterPrice(WebDriver driver, String price, WaitUtils waitUtils) {
-        WebElement priceFromElm = SeleniumUtils.findElementByXPath(driver, priceFromXpath);
-        waitUtils.sleepMillis(2000);
-        System.out.println("Nhập giá chuyển: " + price);
-        String inputValue = priceFromElm.getAttribute("value");
-        if (!inputValue.isEmpty()) {
-            priceFromElm.sendKeys(Keys.CONTROL + "a"); // Bôi đen toàn bộ nội dung
-            priceFromElm.sendKeys(Keys.DELETE); // Xóa nội dung
+        try {
+            WebElement priceFromElm = SeleniumUtils.findElementByXPath(driver, priceFromXpath);
+            waitUtils.sleepMillis(2000);
+            System.out.println("Nhập giá chuyển: " + price);
+            String inputValue = priceFromElm.getAttribute("value");
+            if (!inputValue.isEmpty()) {
+                priceFromElm.sendKeys(Keys.CONTROL + "a"); // Bôi đen toàn bộ nội dung
+                priceFromElm.sendKeys(Keys.DELETE); // Xóa nội dung
+            }
+            priceFromElm.sendKeys(price);
+            waitUtils.sleepMillis(3000);
+        } catch (ElementNotInteractableException e) {
+            System.out.println("Co loi xay ra o price: " + e.getMessage());
         }
-        priceFromElm.sendKeys(price);
-        waitUtils.sleepMillis(3000);
     }
 
     private void clickSwapButtons(WebDriver driver, WaitUtils waitUtils) {
@@ -714,24 +629,28 @@ public class ProfileAutomation {
         System.out.println("Chuyển sang Tab OKX để xác nhận MINT");
         SeleniumUtils.switchToTab(driver, 0);
         waitUtils.sleepMillis(3000);
-        driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
-        waitUtils.sleepMillis(3000);
-        waitUtils.waitForElementVisible(By.xpath(buttonVerifyOkxXpath), 10);
         if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
-            System.out.println("Có nút xác nhận MINT bên OKX");
-            waitUtils.sleepMillis(5000);
             waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
             SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
-            System.out.println("Đã click vào nút xác nhận MINT");
-            waitUtils.sleepMillis(5000);
-            System.out.println("Chuyển sang tab thứ nhất xem trạng thái MINT");
-            SeleniumUtils.switchToTab(driver, 1);
-            waitUtils.sleepMillis(5000);
-
         } else {
-            SeleniumUtils.switchToTab(driver, 1);
-            approveTransaction(driver, buttonSwapXpath, waitUtils);
+            driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
+            waitUtils.sleepMillis(3000);
+            waitUtils.waitForElementVisible(By.xpath(buttonVerifyOkxXpath), 10);
+            if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
+                System.out.println("Có nút xác nhận MINT bên OKX");
+                waitUtils.sleepMillis(5000);
+                waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
+                SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+                System.out.println("Đã click vào nút xác nhận MINT");
+                waitUtils.sleepMillis(5000);
+                System.out.println("Chuyển sang tab thứ nhất xem trạng thái MINT");
+            } else {
+                SeleniumUtils.switchToTab(driver, 1);
+                approveTransaction(driver, buttonSwapXpath, waitUtils);
+            }
         }
+        SeleniumUtils.switchToTab(driver, 1);
+        waitUtils.sleepMillis(5000);
     }
 
 
