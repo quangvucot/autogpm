@@ -1,6 +1,8 @@
 package com.vdq.autogpm.util;
 
 import com.vdq.autogpm.ui.MainApp;
+import javafx.scene.control.Alert;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.util.Random;
@@ -37,5 +39,25 @@ public class Utils {
         double randomValue = start + (end * random.nextDouble());
         randomValue = Math.round(randomValue * 10.0) / 10.0;
         return randomValue;
+    }
+    public static void showInfoAlert(String title, String headerText, String contentText) {
+        showAlert(Alert.AlertType.INFORMATION, title, headerText, contentText);
+    }
+
+    public static void showWarningAlert(String title, String headerText, String contentText) {
+        showAlert(Alert.AlertType.WARNING, title, headerText, contentText);
+    }
+
+    public static void showErrorAlert(String title, String headerText, String contentText) {
+        showAlert(Alert.AlertType.ERROR, title, headerText, contentText);
+    }
+
+    private static void showAlert(Alert.AlertType alertType, String title, String headerText, String contentText) {
+        Alert alert = new Alert(alertType);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setTitle(title);
+        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
+        alert.showAndWait();
     }
 }

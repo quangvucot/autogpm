@@ -8,6 +8,7 @@ import com.vdq.autogpm.automation.ProfileTask;
 import com.vdq.autogpm.executor.ProfileExecutor;
 import com.vdq.autogpm.service.ProfileService;
 import com.vdq.autogpm.util.ExcelUtils;
+import com.vdq.autogpm.util.Utils;
 import com.vdq.autogpm.webdriver.WebDriverManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,6 +20,7 @@ import javafx.scene.control.skin.TableHeaderRow;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -56,6 +58,11 @@ public class MainController {
     @FXML
     private TextField heightField;
 
+    @FXML
+    private CheckBox beraToWbera, beraToHoney, beraToStgusdc, beraToUsdt, beraToDai, beraToWbtc, beraToWeth;
+    @FXML
+    private CheckBox honeyToWbera, honeyToBera, honeyToStgusdc, honeyToUsdt, honeyToDai, honeyToWbtc, honeyToWeth;
+    private Map<String, List<String>> coinSwaps = new HashMap<>();
     private ProfileController profileController;
     private ProfileService profileService;
     private ProfileAutomation profileAutomation;
@@ -80,11 +87,40 @@ public class MainController {
         selectColumn.setPrefWidth(30);
     }
 
+    private boolean getValueSelected() {
+        coinSwaps.clear(); // Clear previous selections
+        if (beraToWbera.isSelected()) addSwap("BERA", "WBERA");
+        if (beraToHoney.isSelected()) addSwap("BERA", "HONEY");
+        if (beraToStgusdc.isSelected()) addSwap("BERA", "STGUSDC");
+        if (beraToUsdt.isSelected()) addSwap("BERA", "USDT");
+        if (beraToDai.isSelected()) addSwap("BERA", "DAI");
+        if (beraToWbtc.isSelected()) addSwap("BERA", "WBTC");
+        if (beraToWeth.isSelected()) addSwap("BERA", "WETH");
+
+        if (honeyToWbera.isSelected()) addSwap("HONEY", "WBERA");
+        if (honeyToBera.isSelected()) addSwap("HONEY", "BERA");
+        if (honeyToStgusdc.isSelected()) addSwap("HONEY", "STGUSDC");
+        if (honeyToUsdt.isSelected()) addSwap("HONEY", "USDT");
+        if (honeyToDai.isSelected()) addSwap("HONEY", "DAI");
+        if (honeyToWbtc.isSelected()) addSwap("HONEY", "WBTC");
+        if (honeyToWeth.isSelected()) addSwap("HONEY", "WETH");
+
+        if (coinSwaps.isEmpty()) {
+            Utils.showWarningAlert("Không có lựa chọn", null, "Vui lòng chọn ít nhất 1 đồng Coin để Swap");
+            return false;
+        }
+        return true;
+    }
+
+    private void addSwap(String fromCoin, String toCoin) {
+        coinSwaps.computeIfAbsent(fromCoin, k -> new ArrayList<>()).add(toCoin);
+    }
 
     @FXML
     public void initialize() {
+
         profileService = new ProfileService();
-        profileAutomation = new ProfileAutomation();
+        profileAutomation = new ProfileAutomation(coinSwaps);
         profileExecutor = new ProfileExecutor();
         selectColumn.setCellFactory(CheckBoxTableCell.forTableColumn(selectColumn));
         selectColumn.setCellValueFactory(cellData -> cellData.getValue().selectedProperty());
@@ -190,9 +226,12 @@ public class MainController {
 
     @FXML
     private void nurtureProfile() {
+        if (!getValueSelected()) {
+            return;
+        }
         List<Profile> selectedProfiles = getSelectedProfiles(profileTable.getItems());
         if (selectedProfiles.isEmpty()) {
-            System.out.println("No profiles selected.");
+            Utils.showWarningAlert("Không có lựa chọn", null, "Bạn chưa chọn Profile nào!!!");
             return;
         }
         List<CompletableFuture<Profile>> futures = selectedProfiles.stream()
@@ -232,7 +271,7 @@ public class MainController {
 
             for (String profileId : groupProfiles.keySet()) {
                 if (groupProfiles.get(profileId).equals(newValue)) {
-                    System.out.println("Profile ID " +profileId);
+                    System.out.println("Profile ID " + profileId);
                     profileController.fetchProfilesByGroup(profileId).thenAccept(profiles -> {
                         profileTable.getItems().clear();
                         profileTable.getItems().setAll(profiles);

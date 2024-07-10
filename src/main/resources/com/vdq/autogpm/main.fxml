@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
 <VBox xmlns="http://javafx.com/javafx/8"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.vdq.autogpm.controller.MainController">
@@ -43,14 +44,40 @@
             <TableColumn fx:id="actionColumn" text="Action"/>
         </columns>
     </TableView>
-    <HBox >
+    <HBox spacing="20">
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="BERA"/>
+            <CheckBox fx:id="beraToWbera" text="WBERA"/>
+            <CheckBox fx:id="beraToHoney" text="HONEY"/>
+            <CheckBox fx:id="beraToStgusdc" text="STGUSDC"/>
+            <CheckBox fx:id="beraToUsdt" text="USDT"/>
+            <CheckBox fx:id="beraToDai" text="DAI"/>
+            <CheckBox fx:id="beraToWbtc" text="WBTC"/>
+            <CheckBox fx:id="beraToWeth" text="WETH"/>
+        </VBox>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="HONEY"/>
+            <CheckBox fx:id="honeyToWbera" text="WBERA"/>
+            <CheckBox fx:id="honeyToBera" text="BERA"/>
+            <CheckBox fx:id="honeyToStgusdc" text="STGUSDC"/>
+            <CheckBox fx:id="honeyToUsdt" text="USDT"/>
+            <CheckBox fx:id="honeyToDai" text="DAI"/>
+            <CheckBox fx:id="honeyToWbtc" text="WBTC"/>
+            <CheckBox fx:id="honeyToWeth" text="WETH"/>
+        </VBox>
+    </HBox>
+    <HBox>
         <Button text="Khởi Chạy" onAction="#handleStart"/>
         <Button text="Dừng" onAction="#handleStop"/>
         <Button text="Profile" onAction="#nurtureProfile"/>
-
-
-<!--        <CheckBox fx:id="isSendEmail" text="Send?"/>-->
     </HBox>
     <TextArea fx:id="logArea" editable="false"
               promptText="Log output"/>
+
 </VBox>

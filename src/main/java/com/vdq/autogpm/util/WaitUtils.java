@@ -31,6 +31,7 @@ public class WaitUtils {
     // Chờ một phần tử có the click được
     public WebElement waitForClickability(By locator) {
         try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             return wait.until(ExpectedConditions.elementToBeClickable(locator));
         } catch (TimeoutException e) {
             System.out.println("Element not clickable within the timeout period: " + locator);
