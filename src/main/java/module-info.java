@@ -1,8 +1,7 @@
+
 module com.vdq.autogpm {
     requires javafx.controls;
     requires javafx.fxml;
-
-    requires org.controlsfx.controls;
     requires retrofit2;
     requires retrofit2.converter.gson;
     requires com.google.gson;
@@ -13,8 +12,7 @@ module com.vdq.autogpm {
     requires org.seleniumhq.selenium.support;
     requires org.apache.poi.ooxml;
     requires jdk.compiler;
-    opens com.vdq.autogpm.ui;
-    opens com.vdq.autogpm;
+    opens com.vdq.autogpm to javafx.fxml;
     opens com.vdq.autogpm.controller;
-    opens  com.vdq.autogpm.api;
+    exports com.vdq.autogpm;
 }

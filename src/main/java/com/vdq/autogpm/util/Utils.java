@@ -1,6 +1,6 @@
 package com.vdq.autogpm.util;
 
-import com.vdq.autogpm.ui.MainApp;
+import com.vdq.autogpm.Main;
 import javafx.scene.control.Alert;
 import javafx.stage.StageStyle;
 
@@ -12,7 +12,7 @@ import java.util.logging.SimpleFormatter;
 import java.util.logging.Logger;
 
 public class Utils {
-    private static final Logger logger = Logger.getLogger(MainApp.class.getName());
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void writelog(String log) {
         String logDir = "C:/ProgramData/MySoftware/logs";

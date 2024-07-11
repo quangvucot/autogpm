@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: com.vdq.autogpm.ui.MainApp
+Main-Class: com.vdq.autogpm.Main
 

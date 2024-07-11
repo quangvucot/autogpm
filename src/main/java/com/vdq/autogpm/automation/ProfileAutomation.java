@@ -21,7 +21,7 @@ public class ProfileAutomation {
     //    XPath mật khẩu OKX
     private final String okxPasswordXpath = "//input[@type='password' or @id='password']";
     // Mật khẩu OKX (Chưa mã hóa)
-    private final String yourPassowrd = "VudqMeta1908@#";
+    private final String yourPassowrd = "";
     // Xpath nút kết nối ví
     private final String connectWalletButtonXpath = "//button[@data-testid='ConnectButton']";
     // Xpath Trạng thái kết  nối ví lỗi

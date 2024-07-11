@@ -1,4 +1,4 @@
-package com.vdq.autogpm.ui;
+package com.vdq.autogpm;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +18,6 @@ public class MainApp extends Application {
 		try{
 			FileHandler fh = new FileHandler("app.log");
 			LOGGER.addHandler(fh);
-
 			FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("/com/vdq/autogpm/main.fxml"));
 			Scene scene = new Scene(fxmlLoader.load(), 1000,1000);
 			stage.setTitle("Vu Quang!");

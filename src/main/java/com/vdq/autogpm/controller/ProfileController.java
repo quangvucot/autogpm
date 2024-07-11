@@ -5,7 +5,6 @@ import com.vdq.autogpm.api.ApiService;
 import com.vdq.autogpm.api.Group;
 import com.vdq.autogpm.api.Profile;
 import com.vdq.autogpm.service.ProfileService;
-import org.controlsfx.control.tableview2.filter.filtereditor.SouthFilter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
