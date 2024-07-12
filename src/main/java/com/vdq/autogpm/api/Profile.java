@@ -4,6 +4,7 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 
 public class Profile {
+
     private String id;
     private String name;
     private String raw_proxy;

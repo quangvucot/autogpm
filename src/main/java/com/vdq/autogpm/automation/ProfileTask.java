@@ -6,31 +6,37 @@ import com.vdq.autogpm.webdriver.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.Callable;
+import java.util.logging.Logger;
+
 
 public class ProfileTask implements Callable<Profile> {
     private Profile profile;
     private ProfileService profileService;
     private ProfileAutomation profileAutomation;
+    private String pass;
+    private static final Logger logger = Logger.getLogger(ProfileTask.class.getName());
 
-    public ProfileTask(Profile profile, ProfileService profileService, ProfileAutomation profileAutomation) {
+    public ProfileTask(Profile profile, ProfileService profileService, ProfileAutomation profileAutomation, String okxPassword) {
         this.profile = profile;
         this.profileService = profileService;
         this.profileAutomation = profileAutomation;
+        this.pass = okxPassword;
     }
 
 
     @Override
     public Profile call() throws Exception {
+        logger.info("Bắt đầu khởi chạy profile" + profile.getName());
+
         try {
             WebDriverManager webDriverManager = new WebDriverManager();
             // Lấy dữ liệu profile
             Profile profileData = profileService.getProfileData(profile).join();
+            logger.info("Running current port: " + profileData.getRemote_debugging_address());
+            logger.info("Running current Debugging: " + profileData.getDriver_path());
             WebDriver driver = webDriverManager.initializeDriver(profileData);
             // Chạy automation cho profile
-            System.out.println("Running automation for profile: " + profileData.getId());
-            profileAutomation.runAutomation(driver);
-            System.out.println("Finished automation for profile: " + profileData.getId());
-
+            profileAutomation.runAutomation(driver, pass);
             return profileData;
         } catch (Exception e) {
             e.printStackTrace();

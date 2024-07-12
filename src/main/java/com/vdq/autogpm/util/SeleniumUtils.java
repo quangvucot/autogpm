@@ -1,6 +1,7 @@
 package com.vdq.autogpm.util;
 
 import com.sun.tools.javac.Main;
+import com.vdq.autogpm.controller.ProfileController;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,9 +12,10 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class SeleniumUtils {
-
+    private static final Logger logger = Logger.getLogger(SeleniumUtils.class.getName());
     /**
      * Tìm một phần tử bằng XPath.
      *
@@ -175,7 +177,7 @@ public class SeleniumUtils {
 
         try (InputStream input = Main.class.getClassLoader().getResourceAsStream("config.properties")) {
             if (input == null) {
-                System.out.println("Sorry, unable to find config.properties");
+                logger.info("Sorry, unable to find config.properties");
                 return "";
             }
 

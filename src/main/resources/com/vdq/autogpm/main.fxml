@@ -24,13 +24,15 @@
     </MenuBar>
 
     <HBox>
-        <TextField fx:id="urlField" visible="false" promptText="Enter URL"/>
-        <Button text="Tải dữ liệu" onAction="#handleGo"/>
+<!--        <TextField fx:id="urlField" visible="false" promptText="Enter URL"/>-->
+        <Button text="Tải dữ liệu từ GPM" onAction="#handleGo"/>
         <HBox>
-            <TextField fx:id="widthField" promptText="Width"/>
-            <TextField fx:id="heightField" promptText="height"/>
-            <TextField fx:id="profileOpen" promptText="Luồng"/>
-            <ComboBox fx:id="groupProfile" layoutX="15.0" layoutY="33.0" prefWidth="90.0" promptText="choose"/>
+<!--            <TextField fx:id="passwordField" promptText="Password"/>&ndash;&gt;-->
+            <TextField fx:id="passField" promptText="Password"/>
+<!--            <TextField fx:id="heightField" promptText="height"/>-->
+<!--            <TextField fx:id="profileOpen" promptText="Luồng"/>-->
+
+            <ComboBox   prefHeight="25.0"   fx:id="groupProfile" layoutX="15.0" layoutY="33.0" prefWidth="200.0" promptText="Chọn Nhóm"/>
         </HBox>
     </HBox>
 
@@ -46,9 +48,7 @@
     </TableView>
     <HBox spacing="20">
         <VBox spacing="10">
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
+
             <Label text="BERA"/>
             <CheckBox fx:id="beraToWbera" text="WBERA"/>
             <CheckBox fx:id="beraToHoney" text="HONEY"/>

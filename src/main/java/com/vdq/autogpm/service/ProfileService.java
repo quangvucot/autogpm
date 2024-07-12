@@ -5,6 +5,7 @@ import com.vdq.autogpm.api.ApiClient;
 import com.vdq.autogpm.api.ApiService;
 import com.vdq.autogpm.api.Group;
 import com.vdq.autogpm.api.Profile;
+import com.vdq.autogpm.automation.ProfileAutomation;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -13,11 +14,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import java.util.logging.Logger;
 
 public class ProfileService {
     private ApiService apiService;
     private Map<String, Profile> profileMap;
-
+    private static final Logger logger = Logger.getLogger(ProfileService.class.getName());
     public ProfileService() {
         this.apiService = ApiClient.getApiService();
         this.profileMap = new HashMap<>();
@@ -50,7 +52,7 @@ public class ProfileService {
                     assert response.body() != null;
                     if (response.body().success) {
                         Profile updatedProfile = response.body().data;
-                        System.out.println(profile.getId());
+                        logger.info(profile.getId());
                         profile.setRemote_debugging_address(updatedProfile.getRemote_debugging_address());
                         profile.setDriver_path(updatedProfile.getDriver_path());
 
@@ -77,7 +79,7 @@ public class ProfileService {
                     Profile updatedProfile = response.body().data;
                     profile.setRemote_debugging_address(updatedProfile.getRemote_debugging_address());
                     profile.setDriver_path(updatedProfile.getDriver_path());
-                    System.out.println("Opened profile: " + profile.getId());
+                    logger.info("Opened profile: " + profile.getId());
                     future.complete(profile); // Đảm bảo hoàn thành CompletableFuture sau khi cập nhật
                 } else {
                     future.completeExceptionally(new RuntimeException("Failed to open profile"));

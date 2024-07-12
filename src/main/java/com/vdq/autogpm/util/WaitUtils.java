@@ -1,5 +1,6 @@
 package com.vdq.autogpm.util;
 
+import com.vdq.autogpm.automation.ProfileAutomation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -8,9 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 public class WaitUtils {
-
+    private static final Logger logger = Logger.getLogger(ProfileAutomation.class.getName());
     private WebDriver driver;
     private WebDriverWait wait;
 
@@ -34,7 +36,7 @@ public class WaitUtils {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             return wait.until(ExpectedConditions.elementToBeClickable(locator));
         } catch (TimeoutException e) {
-            System.out.println("Element not clickable within the timeout period: " + locator);
+            logger.info("Element not clickable within the timeout period: " + locator);
             return null;
         }
     }

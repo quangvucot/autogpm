@@ -12,17 +12,19 @@ import retrofit2.Response;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.logging.Logger;
 
 public class ProfileController {
     private ProfileService profileService;
     private List<Profile> profileList;
-    List<Group> groupArrayList;
+    private static final Logger logger = Logger.getLogger(ProfileController.class.getName());
 
     public ProfileController() {
         this.profileService = new ProfileService();
     }
 
     public CompletableFuture<List<Profile>> fetchProfiles() {
+
         CompletableFuture<List<Profile>> future = new CompletableFuture<>();
         profileService.fetchProfiles(new Callback<ApiService.ApiResponse>() {
             @Override
@@ -37,7 +39,7 @@ public class ProfileController {
 
             @Override
             public void onFailure(Call<ApiService.ApiResponse> call, Throwable t) {
-                System.out.println("Vui lòng bật GPM");
+                logger.info("Vui lòng bật GPM");
                 t.printStackTrace();
                 future.completeExceptionally(t);
             }
@@ -60,7 +62,7 @@ public class ProfileController {
 
             @Override
             public void onFailure(Call<ApiService.ApiResponse> call, Throwable t) {
-                System.out.println("Vui lòng bật GPM");
+                logger.info("Vui lòng bật GPM");
                 t.printStackTrace();
                 future.completeExceptionally(t);
             }
@@ -84,7 +86,7 @@ public class ProfileController {
 
             @Override
             public void onFailure(Call<ApiService.ApiResponseGroup> call, Throwable t) {
-                System.out.println("Vui lòng bật GPM");
+                logger.info("Vui lòng bật GPM");
                 t.printStackTrace();
                 future.completeExceptionally(t);
             }
