@@ -126,7 +126,6 @@ public class ProfileAutomation {
 
 
     private void performSwaps(WebDriver driver, WaitUtils waitUtils) {
-
         for (Map.Entry<String, List<String>> entry : coinSwaps.entrySet()) {
             String fromCoin = entry.getKey();
             System.out.println("From Coin " + fromCoin);
