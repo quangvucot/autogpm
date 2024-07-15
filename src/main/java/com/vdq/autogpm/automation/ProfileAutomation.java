@@ -187,9 +187,11 @@ public class ProfileAutomation {
       Đi vào trang swap
      */
     private void swapTokenAction(WebDriver driver, WaitUtils waitUtils) {
-        WebElement connectWalletButtonElm = SeleniumUtils.findElementByXPath(driver, swapTokensXpath);
-        connectWalletButtonElm.click();
+//        WebElement connectWalletButtonElm = SeleniumUtils.findElementByXPath(driver, swapTokensXpath);
+//        connectWalletButtonElm.click();
+        SeleniumUtils.waitForClickabilityAndClick(driver,swapTokensXpath, 30);
         waitUtils.sleepMillis(5000);
+        SeleniumUtils.zoomOut(driver);
     }
 
     private void mintCoin(WebDriver driver, String coinName, String price, int numSwaps, WaitUtils waitUtils) {
@@ -217,13 +219,13 @@ public class ProfileAutomation {
                     waitUtils.sleepMillis(3000);
                     driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
                     waitUtils.sleepMillis(3000);
-                    waitUtils.waitForElementVisible(By.xpath(buttonVerifyOkxXpath), 10);
+                   SeleniumUtils.waitForClickabilityAndClick(driver,buttonVerifyOkxXpath, 30);
 
                     // Kiểm tra xem có hiển thị nút xác nhận bên ví OKX không?
                     if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
                         System.out.println("Có nút xác nhận Approve Coin bên OKX");
                         waitUtils.sleepMillis(5000);
-                        SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+                        SeleniumUtils.waitForClickabilityAndClick(driver,buttonVerifyOkxXpath, 30);
                         System.out.println("Đã click vào nút xác nhận Approve Coin");
                         waitUtils.sleepMillis(5000);
                         System.out.println("Chuyển sang tab thứ nhất để MINT");
@@ -231,9 +233,10 @@ public class ProfileAutomation {
                         waitUtils.sleepMillis(3000);
                         waitUtils.waitForElementVisible(By.xpath(buttonMintHoneyXpath), 20);
                         if (SeleniumUtils.isElementPresent(driver, buttonMintHoneyXpath)) {
-                            waitUtils.waitForClickability(By.xpath(buttonMintHoneyXpath));
+//                            SeleniumUtils.waitForClickabilityAndClick(driver,buttonMintHoneyXpath, 30);
+//                            waitUtils.waitForClickability(By.xpath(buttonMintHoneyXpath));
                             System.out.println("Click vào MINT ");
-                            SeleniumUtils.findElementByXPath(driver, buttonMintHoneyXpath).click();
+                            SeleniumUtils.waitForClickabilityAndClick(driver,buttonMintHoneyXpath, 30);
                             waitUtils.sleepMillis(3000);
                             System.out.println("Chuyển sang Tab OKX để xác nhận MINT");
                             SeleniumUtils.switchToTab(driver, 0);
@@ -245,7 +248,7 @@ public class ProfileAutomation {
                                 System.out.println("Có nút xác nhận MINT bên OKX");
                                 waitUtils.sleepMillis(5000);
                                 waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
-                                SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+                                SeleniumUtils.waitForClickabilityAndClick(driver,buttonVerifyOkxXpath, 20);
                                 System.out.println("Đã click vào nút xác nhận MINT");
                                 waitUtils.sleepMillis(5000);
                                 System.out.println("Chuyển sang tab thứ nhất xem trạng thái MINT");
@@ -256,7 +259,7 @@ public class ProfileAutomation {
                     }
                 } else if (SeleniumUtils.isElementPresent(driver, buttonMintHoneyXpath)) {
                     waitUtils.waitForClickability(By.xpath(buttonMintHoneyXpath));
-                    SeleniumUtils.findElementByXPath(driver, buttonMintHoneyXpath).click();
+                    SeleniumUtils.waitForClickabilityAndClick(driver,buttonMintHoneyXpath, 20);
                     waitUtils.sleepMillis(5000);
                     System.out.println("Chuyển sang tab thứ nhất xem trạng thái chuyển tiền");
                     SeleniumUtils.switchToTab(driver, 0);
@@ -268,7 +271,7 @@ public class ProfileAutomation {
                         System.out.println("Có nút xác nhận chuyển tiền bên OKX");
                         waitUtils.sleepMillis(5000);
                         waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
-                        SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+                        SeleniumUtils.waitForClickabilityAndClick(driver,buttonVerifyOkxXpath, 20);
                         System.out.println("Đã click vào nút xác nhận chuyển tiền");
                         waitUtils.sleepMillis(5000);
                         System.out.println("Chuyển sang tab thứ nhất xem trạng thái chuyển tiền");
@@ -416,7 +419,8 @@ public class ProfileAutomation {
             System.out.println("Coin chuan bị chon trung voi coin chuyen => Swap lai thoi");
             WebElement fromElm = SeleniumUtils.findElementByXPath(driver, changeSwapCoinXpath);
             waitUtils.waitForClickability(By.xpath(changeSwapCoinXpath));
-            fromElm.click();
+//            fromElm.click();
+            SeleniumUtils.waitForClickabilityAndClick(driver, changeSwapCoinXpath, 10);
             enterPrice(driver, price, waitUtils);
             if (checkNotEnoughtMoney(driver)) {
                 approveTransaction(driver, buttonSwapXpath, waitUtils);
@@ -445,7 +449,8 @@ public class ProfileAutomation {
         try {
             WebElement fromElm = SeleniumUtils.findElementByXPath(driver, xpathCoinName);
             waitUtils.waitForClickability(By.xpath(xpathCoinName));
-            fromElm.click();
+            SeleniumUtils.waitForClickabilityAndClick(driver, xpathCoinName, 10);
+//            fromElm.click();
         } catch (ElementClickInterceptedException e) {
             System.out.println("Khong the click vao button Select Coin" + e.getMessage());
         }
@@ -457,7 +462,8 @@ public class ProfileAutomation {
                 try {
                     System.out.println("webElement.getText(): " + webElement.getText());
                     waitUtils.sleepMillis(1000);
-                    webElement.click();
+                    SeleniumUtils.waitForClickabilityAndClickInPopup(driver, webElement, 10);
+//                    webElement.click();
                     return true; // Trả về true nếu chọn đồng coin thành công
                 } catch (TimeoutException e) {
                     System.out.println("Element is not clickable within the timeout period: " + e.getMessage());
@@ -491,15 +497,18 @@ public class ProfileAutomation {
             if (SeleniumUtils.isElementPresent(driver, previewButtonXpath)) {
                 System.out.println("Có nút Preview");
                 waitUtils.waitForClickability(By.xpath(previewButtonXpath));
-                SeleniumUtils.findElementByXPath(driver, previewButtonXpath).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,previewButtonXpath,10);
+//                SeleniumUtils.findElementByXPath(driver, previewButtonXpath).click();
                 waitUtils.sleepMillis(4000);
                 waitUtils.waitForClickability(By.xpath(buttonSwapXpath));
-                SeleniumUtils.findElementByXPath(driver, buttonSwapXpath).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,buttonSwapXpath,10);
+//                SeleniumUtils.findElementByXPath(driver, buttonSwapXpath).click();
                 waitUtils.sleepMillis(3000);
             } else if (SeleniumUtils.isElementPresent(driver, swapButtonXpath)) {
                 System.out.println("Có nút Swap");
                 waitUtils.waitForClickability(By.xpath(swapButtonXpath));
-                SeleniumUtils.findElementByXPath(driver, swapButtonXpath).click();
+//                SeleniumUtils.findElementByXPath(driver, swapButtonXpath).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,swapButtonXpath,10);
             }
             waitUtils.sleepMillis(5000);
         } catch (ElementClickInterceptedException e) {
@@ -549,13 +558,16 @@ public class ProfileAutomation {
                 System.out.println("Chuyển thành công -> Đóng Popup");
                 waitUtils.sleepMillis(3000);
                 waitUtils.waitForClickability(By.xpath(buttonStatusTransaction));
-                SeleniumUtils.findElementByXPath(driver, buttonStatusTransaction).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,buttonStatusTransaction,10);
+//                SeleniumUtils.findElementByXPath(driver, buttonStatusTransaction).click();
             } else if (transValue.toLowerCase().contains("error")) {
                 System.out.println("Chuyển thất bại -> Đóng Popup");
                 waitUtils.sleepMillis(3000);
                 waitUtils.waitForClickability(By.xpath(buttonStatusTransaction));
-                SeleniumUtils.findElementByXPath(driver, buttonStatusTransaction).click();
+//                SeleniumUtils.findElementByXPath(driver, buttonStatusTransaction).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,buttonStatusTransaction,10);
             }
+
             waitUtils.sleepMillis(3000);
         }
     }
@@ -566,8 +578,10 @@ public class ProfileAutomation {
 
         if (SeleniumUtils.isElementPresent(driver, buttonApproveCoinXpath)) {
             System.out.println("Co Approve");
-            SeleniumUtils.findElementByXPath(driver, buttonApproveCoinXpath).click();
+//            SeleniumUtils.findElementByXPath(driver, buttonApproveCoinXpath).click();
+            SeleniumUtils.waitForClickabilityAndClick(driver,buttonApproveCoinXpath,10);
             waitUtils.sleepMillis(3000);
+
             System.out.println("Chuyển sang Tab OKX để xác nhận Approve Mint Coin");
             SeleniumUtils.switchToTab(driver, 0);
             switchOKXToVerifyTrans(driver, waitUtils);
@@ -575,7 +589,8 @@ public class ProfileAutomation {
                 waitUtils.waitForClickability(By.xpath(xpathAction));
                 System.out.println("Click vào MINT ");
                 waitUtils.waitForClickability(By.xpath(xpathAction));
-                SeleniumUtils.findElementByXPath(driver, xpathAction).click();
+//                SeleniumUtils.findElementByXPath(driver, xpathAction).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,xpathAction,10);
             } else if (SeleniumUtils.isElementPresent(driver, previewButtonXpath)) {
                 System.out.println("Co Preview Button trong approve");
                 clickSwapButtons(driver, waitUtils);
@@ -587,7 +602,8 @@ public class ProfileAutomation {
         } else if (SeleniumUtils.isElementPresent(driver, buttonMintHoneyXpath)) {
             System.out.println("Co Button Mint");
             waitUtils.waitForClickability(By.xpath(buttonMintHoneyXpath));
-            SeleniumUtils.findElementByXPath(driver, buttonMintHoneyXpath).click();
+//            SeleniumUtils.findElementByXPath(driver, buttonMintHoneyXpath).click();
+            SeleniumUtils.waitForClickabilityAndClick(driver,buttonMintHoneyXpath,10);
             switchOKXToVerifyTrans(driver, waitUtils);
         } else if (SeleniumUtils.isElementPresent(driver, previewButtonXpath)) {
             clickSwapButtons(driver, waitUtils);
@@ -597,7 +613,8 @@ public class ProfileAutomation {
             }
         } else if (SeleniumUtils.isElementPresent(driver, buttonUnwrapXpath)) {
             waitUtils.waitForClickability(By.xpath(buttonUnwrapXpath));
-            SeleniumUtils.findElementByXPath(driver, buttonUnwrapXpath).click();
+//            SeleniumUtils.findElementByXPath(driver, buttonUnwrapXpath).click();
+            SeleniumUtils.waitForClickabilityAndClick(driver,buttonUnwrapXpath,10);
             System.out.println("Co UnWrap Button Button trong approve");
             if (!checkSomethingwentwrong(driver, waitUtils)) {
                 switchOKXToVerifyTrans(driver, waitUtils);
@@ -605,7 +622,8 @@ public class ProfileAutomation {
         } else if (SeleniumUtils.isElementPresent(driver, swapButtonXpath)) {
             System.out.println("Co Swap Button");
             waitUtils.waitForClickability(By.xpath(swapButtonXpath));
-            SeleniumUtils.findElementByXPath(driver, swapButtonXpath).click();
+//            SeleniumUtils.findElementByXPath(driver, swapButtonXpath).click();
+            SeleniumUtils.waitForClickabilityAndClick(driver,swapButtonXpath,10);
 
             if (!checkSomethingwentwrong(driver, waitUtils)) {
                 switchOKXToVerifyTrans(driver, waitUtils);
@@ -618,7 +636,8 @@ public class ProfileAutomation {
         if (SeleniumUtils.isElementPresent(driver, somethingWentWrongXpath)) {
             waitUtils.sleepMillis(2000);
             waitUtils.waitForClickability(By.xpath(closeButtonXpath));
-            SeleniumUtils.findElementByXPath(driver, closeButtonXpath).click();
+//            SeleniumUtils.findElementByXPath(driver, closeButtonXpath).click();
+            SeleniumUtils.waitForClickabilityAndClick(driver,closeButtonXpath,10);
             return true;
         }
         return false;
@@ -644,7 +663,8 @@ public class ProfileAutomation {
         waitUtils.sleepMillis(3000);
         if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
             waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
-            SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+            SeleniumUtils.waitForClickabilityAndClick(driver,buttonVerifyOkxXpath,10);
+//            SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
         } else {
             driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
             waitUtils.sleepMillis(3000);
@@ -653,7 +673,8 @@ public class ProfileAutomation {
                 System.out.println("Có nút xác nhận MINT bên OKX");
                 waitUtils.sleepMillis(5000);
                 waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
-                SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+//                SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
+                SeleniumUtils.waitForClickabilityAndClick(driver,buttonVerifyOkxXpath,10);
                 System.out.println("Đã click vào nút xác nhận MINT");
                 waitUtils.sleepMillis(5000);
                 System.out.println("Chuyển sang tab thứ nhất xem trạng thái MINT");

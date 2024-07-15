@@ -2,13 +2,14 @@ package com.vdq.autogpm.util;
 
 import com.sun.tools.javac.Main;
 import com.vdq.autogpm.controller.ProfileController;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -191,4 +192,64 @@ public class SeleniumUtils {
             throw new RuntimeException(e);
         }
     }
+
+    public static void waitForClickabilityAndClick(WebDriver driver, String xpath, int timeoutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+
+            // Cuộn phần tử vào trong tầm nhìn nếu cần thiết
+            scrollElementIntoView(driver,element);
+
+            // Click vào phần tử
+            element.click();
+        } catch (Exception e) {
+            System.out.println("Element not clickable within the timeout period: " + xpath);
+            e.printStackTrace();
+        }
+    }
+
+    public static void waitForClickabilityAndClickInPopup(WebDriver driver, WebElement element, int timeoutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+
+            // Cuộn phần tử vào trong tầm nhìn nếu cần thiết
+            scrollElementIntoView(driver,element);
+            Thread.sleep(1000);
+            // Click vào phần tử
+            element.click();
+        } catch (Exception e) {
+            System.out.println("Element not clickable within the timeout period");
+            e.printStackTrace();
+        }
+    }
+
+    private static boolean isElementInViewport(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (Boolean) js.executeScript(
+                "var rect = arguments[0].getBoundingClientRect();" +
+                        "return (" +
+                        "rect.top >= 0 && " +
+                        "rect.left >= 0 && " +
+                        "rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && " +
+                        "rect.right <= (window.innerWidth || document.documentElement.clientWidth)" +
+                        ");", element);
+    }
+    private static void scrollElementIntoView(WebDriver driver, WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'center'});", element);
+
+        // Kiểm tra lại xem phần tử đã nằm trong viewport chưa, nếu chưa thì thử cuộn thêm một lần nữa
+        if (!isElementInViewport(driver,element)) {
+            js.executeScript("arguments[0].scrollIntoView({block: 'center', inline: 'center'});", element);
+        }
+    }
+
+    public static void zoomOut(WebDriver driver) {
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.CONTROL).sendKeys(Keys.SUBTRACT).keyUp(Keys.CONTROL).perform();
+    }
+
 }
