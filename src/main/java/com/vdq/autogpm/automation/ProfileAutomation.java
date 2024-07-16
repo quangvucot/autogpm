@@ -187,9 +187,13 @@ public class ProfileAutomation {
       Đi vào trang swap
      */
     private void swapTokenAction(WebDriver driver, WaitUtils waitUtils) {
-        WebElement connectWalletButtonElm = SeleniumUtils.findElementByXPath(driver, swapTokensXpath);
-        connectWalletButtonElm.click();
-        waitUtils.sleepMillis(5000);
+        try {
+            WebElement connectWalletButtonElm = SeleniumUtils.findElementByXPath(driver, swapTokensXpath);
+            connectWalletButtonElm.click();
+            waitUtils.sleepMillis(5000);
+        }catch (ElementClickInterceptedException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     private void mintCoin(WebDriver driver, String coinName, String price, int numSwaps, WaitUtils waitUtils) {
