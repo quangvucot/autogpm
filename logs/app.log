@@ -12,196 +12,222 @@
 2024-07-13 17:07:17 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 10
 2024-07-13 17:07:22 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 8
 2024-07-13 17:07:24 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 2
-2024-07-14 23:23:42 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-14 23:24:04 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir009 | dungdug3@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir001 | dovantoi444@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir007 | ducthjnh8@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir004 | duccogialai8@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir008 | dungdream01@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir003 | dskhooker123@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir002 | dragonbin3@gmail.com
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: d819bea7-5292-4d63-ad72-1809595f3df6
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61596
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61598
-2024-07-14 23:24:45 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:24:46 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: b1d4a9c1-a209-475c-98b1-3a184d4986e9
-2024-07-14 23:24:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61606
-2024-07-14 23:24:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:24:50 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4dabf48f-875f-4a69-bdfe-120d8711a424
-2024-07-14 23:24:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61627
-2024-07-14 23:24:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:24:52 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 8680a5d8-2b8c-4479-bcef-be1ff8e0c7a0
-2024-07-14 23:24:52 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61645
-2024-07-14 23:24:52 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:24:54 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-14 23:24:54 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61668
-2024-07-14 23:24:54 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:24:59 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 7e68fb47-272e-4e2f-8309-6697e8779ffd
-2024-07-14 23:24:59 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:61681
-2024-07-14 23:24:59 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-14 23:27:47 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: (//div[@class='_action-buttons_j3bvq_1']//button)[2]
-2024-07-14 23:27:47 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: (//div[@class='_action-buttons_j3bvq_1']//button)[2]
-2024-07-14 23:27:47 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: (//div[@class='_action-buttons_j3bvq_1']//button)[2]
-2024-07-14 23:30:11 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
-2024-07-15 00:02:07 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 00:02:15 [INFO] com.vdq.autogpm.controller.ProfileController$3 onFailure Vui lòng bật GPM
-2024-07-15 00:02:15 [INFO] com.vdq.autogpm.controller.ProfileController$1 onFailure Vui lòng bật GPM
-2024-07-15 00:02:18 [INFO] com.vdq.autogpm.controller.ProfileController$3 onFailure Vui lòng bật GPM
-2024-07-15 00:02:18 [INFO] com.vdq.autogpm.controller.ProfileController$1 onFailure Vui lòng bật GPM
-2024-07-15 00:02:20 [INFO] com.vdq.autogpm.controller.ProfileController$1 onFailure Vui lòng bật GPM
-2024-07-15 00:02:20 [INFO] com.vdq.autogpm.controller.ProfileController$3 onFailure Vui lòng bật GPM
-2024-07-15 00:02:23 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 6
-2024-07-15 00:02:46 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 00:02:51 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 00:03:06 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-15 00:03:07 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-15 00:03:08 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse d819bea7-5292-4d63-ad72-1809595f3df6
-2024-07-15 00:03:11 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse 4dabf48f-875f-4a69-bdfe-120d8711a424
-2024-07-15 00:03:14 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse 7e68fb47-272e-4e2f-8309-6697e8779ffd
-2024-07-15 00:03:16 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse b1d4a9c1-a209-475c-98b1-3a184d4986e9
-2024-07-15 00:03:19 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse 8680a5d8-2b8c-4479-bcef-be1ff8e0c7a0
-2024-07-15 00:03:20 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse 3ed0ad4e-a943-4052-9ff0-10a2f360a2fc
-2024-07-15 00:03:24 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse 755d6381-7329-42ea-a736-de5779b56efe
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir004 | duccogialai8@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir011 | dungkc03@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir002 | dragonbin3@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir001 | dovantoi444@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir003 | dskhooker123@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir008 | dungdream01@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir007 | ducthjnh8@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir012 | dungthpl1@gmail.com
-2024-07-15 00:03:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir009 | dungdug3@gmail.com
-2024-07-15 00:03:28 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-15 00:03:28 [INFO] com.vdq.autogpm.automation.ProfileTask call Air002 | dragonbin3@gmail.com Running current port: 127.0.0.1:62848
-2024-07-15 00:03:28 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:29 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: d819bea7-5292-4d63-ad72-1809595f3df6
-2024-07-15 00:03:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Air003 | dskhooker123@gmail.com Running current port: 127.0.0.1:62856
-2024-07-15 00:03:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:31 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 3ed0ad4e-a943-4052-9ff0-10a2f360a2fc
-2024-07-15 00:03:31 [INFO] com.vdq.autogpm.automation.ProfileTask call Air011 | dungkc03@gmail.com Running current port: 127.0.0.1:62870
-2024-07-15 00:03:31 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:32 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4dabf48f-875f-4a69-bdfe-120d8711a424
-2024-07-15 00:03:32 [INFO] com.vdq.autogpm.automation.ProfileTask call Air004 | duccogialai8@gmail.com Running current port: 127.0.0.1:62885
-2024-07-15 00:03:32 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:35 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-15 00:03:35 [INFO] com.vdq.autogpm.automation.ProfileTask call Air001 | dovantoi444@gmail.com Running current port: 127.0.0.1:62915
-2024-07-15 00:03:35 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:41 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: b1d4a9c1-a209-475c-98b1-3a184d4986e9
-2024-07-15 00:03:41 [INFO] com.vdq.autogpm.automation.ProfileTask call Air008 | dungdream01@gmail.com Running current port: 127.0.0.1:62968
-2024-07-15 00:03:41 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:43 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 7e68fb47-272e-4e2f-8309-6697e8779ffd
-2024-07-15 00:03:43 [INFO] com.vdq.autogpm.automation.ProfileTask call Air007 | ducthjnh8@gmail.com Running current port: 127.0.0.1:62978
-2024-07-15 00:03:43 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:46 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 755d6381-7329-42ea-a736-de5779b56efe
-2024-07-15 00:03:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Air012 | dungthpl1@gmail.com Running current port: 127.0.0.1:63006
-2024-07-15 00:03:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:03:48 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 8680a5d8-2b8c-4479-bcef-be1ff8e0c7a0
-2024-07-15 00:03:48 [INFO] com.vdq.autogpm.automation.ProfileTask call Air009 | dungdug3@gmail.com Running current port: 127.0.0.1:63044
-2024-07-15 00:03:48 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:06:20 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 00:06:45 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 00:06:48 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 00:06:52 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 00:07:00 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 00:07:03 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 00:08:26 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
-2024-07-15 00:14:25 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 00:14:36 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 6
-2024-07-15 00:14:37 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 7
-2024-07-15 00:14:39 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir001 | dovantoi444@gmail.com
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir003 | dskhooker123@gmail.com
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir004 | duccogialai8@gmail.com
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir002 | dragonbin3@gmail.com
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: d819bea7-5292-4d63-ad72-1809595f3df6
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Air003 | dskhooker123@gmail.com Running current port: 127.0.0.1:63681
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Air001 | dovantoi444@gmail.com Running current port: 127.0.0.1:63683
-2024-07-15 00:14:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:14:56 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4dabf48f-875f-4a69-bdfe-120d8711a424
-2024-07-15 00:14:56 [INFO] com.vdq.autogpm.automation.ProfileTask call Air004 | duccogialai8@gmail.com Running current port: 127.0.0.1:63689
-2024-07-15 00:14:56 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:14:57 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-15 00:14:57 [INFO] com.vdq.autogpm.automation.ProfileTask call Air002 | dragonbin3@gmail.com Running current port: 127.0.0.1:63709
-2024-07-15 00:14:57 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 00:17:03 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
-2024-07-15 03:48:27 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 03:48:32 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 7
-2024-07-15 03:48:34 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir002 | dragonbin3@gmail.com
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir001 | dovantoi444@gmail.com
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Air002 | dragonbin3@gmail.com Running current port: 127.0.0.1:50951
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Air001 | dovantoi444@gmail.com Running current port: 127.0.0.1:50953
-2024-07-15 03:48:46 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 03:50:41 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
-2024-07-15 03:51:18 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-15 03:51:18 [INFO] com.vdq.autogpm.service.ProfileService$1 onResponse dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-15 03:52:33 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 03:52:44 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 03:53:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir001 | dovantoi444@gmail.com
-2024-07-15 03:53:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir002 | dragonbin3@gmail.com
-2024-07-15 03:53:03 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: be518d1c-d05b-4f68-9137-87b724cb2179
-2024-07-15 03:53:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Air001 | dovantoi444@gmail.com Running current port: 127.0.0.1:51292
-2024-07-15 03:53:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 03:53:04 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: dad6c451-33be-4d76-bc44-5a45384af04f
-2024-07-15 03:53:04 [INFO] com.vdq.autogpm.automation.ProfileTask call Air002 | dragonbin3@gmail.com Running current port: 127.0.0.1:51294
-2024-07-15 03:53:04 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:00:34 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
-2024-07-15 04:04:50 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
-2024-07-15 04:05:41 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 04:05:55 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 6
-2024-07-15 04:06:02 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 04:06:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir014 | duongvanngoan5@gmail.com
-2024-07-15 04:06:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir013 | duongminhdat001@gmail.com
-2024-07-15 04:06:12 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: ca42d583-9ceb-49f0-a0d5-66d0928a3617
-2024-07-15 04:06:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Air013 | duongminhdat001@gmail.com Running current port: 127.0.0.1:51709
-2024-07-15 04:06:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:06:13 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 71305f00-f2cc-4112-abc0-2f725afe6ea7
-2024-07-15 04:06:13 [INFO] com.vdq.autogpm.automation.ProfileTask call Air014 | duongvanngoan5@gmail.com Running current port: 127.0.0.1:51711
-2024-07-15 04:06:13 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:09:55 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 04:10:06 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 04:10:16 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 04:10:22 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 04:10:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir011 | dungkc03@gmail.com
-2024-07-15 04:10:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir012 | dungthpl1@gmail.com
-2024-07-15 04:10:36 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 3ed0ad4e-a943-4052-9ff0-10a2f360a2fc
-2024-07-15 04:10:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Air011 | dungkc03@gmail.com Running current port: 127.0.0.1:51976
-2024-07-15 04:10:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:10:37 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 755d6381-7329-42ea-a736-de5779b56efe
-2024-07-15 04:10:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Air012 | dungthpl1@gmail.com Running current port: 127.0.0.1:51979
-2024-07-15 04:10:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:13:11 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 04:13:19 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 04:13:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir007 | ducthjnh8@gmail.com
-2024-07-15 04:13:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir006 | dunggialai01@gmail.com
-2024-07-15 04:13:36 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 7e68fb47-272e-4e2f-8309-6697e8779ffd
-2024-07-15 04:13:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Air007 | ducthjnh8@gmail.com Running current port: 127.0.0.1:52204
-2024-07-15 04:13:36 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:13:37 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 1a8e2c97-f5da-43ad-a2ac-cba23b918429
-2024-07-15 04:13:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Air006 | dunggialai01@gmail.com Running current port: 127.0.0.1:52206
-2024-07-15 04:13:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:15:27 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
-2024-07-15 04:16:57 [INFO] com.vdq.autogpm.MainApp start Application started
-2024-07-15 04:17:05 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 5
-2024-07-15 04:17:25 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir008 | dungdream01@gmail.com
-2024-07-15 04:17:25 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir004 | duccogialai8@gmail.com
-2024-07-15 04:17:25 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir009 | dungdug3@gmail.com
-2024-07-15 04:17:25 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: b1d4a9c1-a209-475c-98b1-3a184d4986e9
-2024-07-15 04:17:25 [INFO] com.vdq.autogpm.automation.ProfileTask call Air008 | dungdream01@gmail.com Running current port: 127.0.0.1:52366
-2024-07-15 04:17:25 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:17:26 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4dabf48f-875f-4a69-bdfe-120d8711a424
-2024-07-15 04:17:26 [INFO] com.vdq.autogpm.automation.ProfileTask call Air004 | duccogialai8@gmail.com Running current port: 127.0.0.1:52368
-2024-07-15 04:17:26 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:17:27 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 8680a5d8-2b8c-4479-bcef-be1ff8e0c7a0
-2024-07-15 04:17:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Air009 | dungdug3@gmail.com Running current port: 127.0.0.1:52377
-2024-07-15 04:17:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: D:\GPM LOGIN\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
-2024-07-15 04:19:42 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: (//div[@class='_action-buttons_j3bvq_1']//button)[2]
-2024-07-15 04:20:54 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: (//div[@class='_action-buttons_j3bvq_1']//button)[2]
+2024-07-16 14:24:17 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:24:25 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 8
+2024-07-16 14:24:28 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 4
+2024-07-16 14:30:29 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:55514
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:55516
+2024-07-16 14:30:50 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 14:33:05 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-16 14:57:39 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:57:59 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:58:06 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:58:21 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 14:58:26 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 14:58:26 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 14:58:27 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 14:58:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:56168
+2024-07-16 14:58:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 14:58:32 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 14:58:32 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:56170
+2024-07-16 14:58:32 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 14:59:38 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-16 14:57:39 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:57:59 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:58:06 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 14:58:21 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 14:58:26 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 14:58:26 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 14:58:27 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 14:58:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:56168
+2024-07-16 14:58:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 14:58:32 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 14:58:32 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:56170
+2024-07-16 14:58:32 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 14:59:38 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-16 14:59:55 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 15:00:01 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 15:00:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 15:00:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 15:00:16 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 15:00:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:56368
+2024-07-16 15:00:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:00:17 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 15:00:17 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current port: 127.0.0.1:56370
+2024-07-16 15:00:17 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:02:58 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]
+2024-07-16 15:03:45 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-16 15:10:25 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 15:10:32 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 15:10:59 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 15:10:59 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 15:10:59 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 15:10:59 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:56685
+2024-07-16 15:10:59 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:11:01 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 15:11:01 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:56687
+2024-07-16 15:11:01 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:11:24 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-16 15:11:56 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 15:12:03 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 15:12:10 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 15:12:10 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 15:12:11 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 15:12:11 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:56789
+2024-07-16 15:12:11 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:12:12 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 15:12:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:56791
+2024-07-16 15:12:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:22:28 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-16 15:25:57 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-16 15:26:14 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-16 15:26:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-16 15:26:27 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-16 15:26:29 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-16 15:26:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:57129
+2024-07-16 15:26:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:26:29 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-16 15:26:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:57131
+2024-07-16 15:26:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-16 15:36:43 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 12:29:26 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 12:29:29 [INFO] com.vdq.autogpm.controller.ProfileController$1 onFailure Vui lòng bật GPM
+2024-07-17 12:29:29 [INFO] com.vdq.autogpm.controller.ProfileController$3 onFailure Vui lòng bật GPM
+2024-07-17 12:30:04 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 8
+2024-07-17 12:30:06 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 10
+2024-07-17 12:30:08 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 12:30:15 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-17 12:30:15 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 12:30:16 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 12:30:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:62552
+2024-07-17 12:30:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 12:30:22 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-17 12:30:22 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:62554
+2024-07-17 12:30:22 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 12:31:28 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 12:31:51 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 12:31:57 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 8
+2024-07-17 12:32:02 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 10
+2024-07-17 12:32:03 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 12:32:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 12:32:13 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 12:32:13 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:62744
+2024-07-17 12:32:13 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 12:32:32 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 12:32:43 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 12:32:49 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 12:32:49 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 12:32:49 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:62773
+2024-07-17 12:32:49 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 12:34:01 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 12:55:46 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 12:55:54 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 12:56:15 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 12:56:20 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 12:56:20 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:63058
+2024-07-17 12:56:20 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 12:58:12 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 12:58:24 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 12:58:45 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 12:58:47 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 12:58:48 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 12:58:48 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:63163
+2024-07-17 12:58:48 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 12:59:40 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 12:59:55 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 13:00:02 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 13:00:05 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 13:00:06 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 13:00:06 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:63230
+2024-07-17 13:00:06 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 13:01:15 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 13:01:36 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 13:01:45 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 13:01:47 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 13:01:47 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 13:01:47 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:63315
+2024-07-17 13:01:47 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 13:03:06 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 13:03:30 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 13:03:38 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 13:05:33 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 13:05:34 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 13:05:34 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:63410
+2024-07-17 13:05:34 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 13:07:00 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 14:18:30 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 14:18:37 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 14:21:06 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 14:21:16 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 14:21:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:64223
+2024-07-17 14:21:16 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 14:22:18 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 14:35:43 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 14:36:01 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 14:36:07 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 14:37:23 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 8
+2024-07-17 14:37:25 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 14:40:00 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 14:40:00 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 14:40:14 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 14:40:31 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 14:40:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 14:40:37 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 14:40:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:64533
+2024-07-17 14:40:37 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 14:47:24 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 14:58:34 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 14:58:41 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 14:58:48 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-17 14:58:55 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-17 14:58:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:64878
+2024-07-17 14:58:55 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 15:00:56 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 15:01:08 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 15:01:22 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 15:01:29 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-17 15:01:30 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-17 15:01:30 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:64928
+2024-07-17 15:01:30 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 15:05:27 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]
+2024-07-17 15:06:02 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
+2024-07-17 15:08:01 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]
+2024-07-17 15:08:36 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
+2024-07-17 15:10:34 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]
+2024-07-17 15:11:09 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
+2024-07-17 15:13:07 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]
+2024-07-17 15:13:42 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
+2024-07-17 15:15:40 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //div[@class='w-full']//button[@type='button' and contains(text(),'Preview')]
+2024-07-17 15:16:15 [INFO] com.vdq.autogpm.util.WaitUtils waitForClickability Element not clickable within the timeout period: By.xpath: //button[text()='Swap']
+2024-07-17 15:17:32 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 15:18:11 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 15:18:24 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir01: alicucanh123@gmail.com
+2024-07-17 15:18:24 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 2f9c271d-c50a-4253-a547-00df1ef64632
+2024-07-17 15:18:24 [INFO] com.vdq.autogpm.automation.ProfileTask call Air01: alicucanh123@gmail.com Running current port: 127.0.0.1:65152
+2024-07-17 15:18:24 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 15:23:40 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.
+2024-07-17 15:24:48 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 15:25:18 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 15:25:21 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-17 15:25:21 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-17 15:25:21 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:65354
+2024-07-17 15:25:21 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 15:26:40 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 15:26:57 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 15:27:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-17 15:27:03 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-17 15:27:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:65396
+2024-07-17 15:27:03 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 15:27:37 [INFO] com.vdq.autogpm.MainApp start Application started
+2024-07-17 15:27:58 [INFO] com.vdq.autogpm.controller.MainController lambda$selectDropdown$14 Profile ID 11
+2024-07-17 15:28:11 [INFO] com.vdq.autogpm.automation.ProfileTask call Bắt đầu khởi chạy profileAir02: alikunhan1@gmail.com
+2024-07-17 15:28:12 [INFO] com.vdq.autogpm.service.ProfileService$2 onResponse Opened profile: 4b61dd26-9b69-4eda-bb63-a9e42bdfff48
+2024-07-17 15:28:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Air02: alikunhan1@gmail.com Running current port: 127.0.0.1:65428
+2024-07-17 15:28:12 [INFO] com.vdq.autogpm.automation.ProfileTask call Running current Debugging: F:\GPMLogin\GPMLogin\gpm_browser\gpm_browser_chromium_core_124\gpmdriver.exe
+2024-07-17 15:36:56 [INFO] com.vdq.autogpm.controller.MainController lambda$nurtureProfile$10 All profiles have been processed.

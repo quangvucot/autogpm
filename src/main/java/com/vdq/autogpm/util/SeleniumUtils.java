@@ -198,10 +198,8 @@ public class SeleniumUtils {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
 
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-
             // Cuộn phần tử vào trong tầm nhìn nếu cần thiết
             scrollElementIntoView(driver,element);
-
             // Click vào phần tử
             element.click();
         } catch (Exception e) {
