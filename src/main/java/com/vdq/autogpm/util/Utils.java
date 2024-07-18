@@ -60,4 +60,14 @@ public class Utils {
         alert.setContentText(contentText);
         alert.showAndWait();
     }
+    public static void log(String message) {
+        String threadName = Thread.currentThread().getName();
+        System.out.println("[" + threadName + "] " + message);
+    }
+
+    public static void logError(String message, Exception e) {
+        String threadName = Thread.currentThread().getName();
+        System.err.println("[" + threadName + "] " + message);
+        e.printStackTrace();
+    }
 }

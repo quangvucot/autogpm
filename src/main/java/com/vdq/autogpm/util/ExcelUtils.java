@@ -57,6 +57,7 @@ public class ExcelUtils {
         return String.valueOf((char) ('A' + index));
     }
 
+
     private String getCellValueAsString(Cell cell) {
         switch (cell.getCellType()) {
             case STRING:
