@@ -20,6 +20,7 @@ public class ProfileService {
     private ApiService apiService;
     private Map<String, Profile> profileMap;
     private static final Logger logger = Logger.getLogger(ProfileService.class.getName());
+
     public ProfileService() {
         this.apiService = ApiClient.getApiService();
         this.profileMap = new HashMap<>();
@@ -28,15 +29,33 @@ public class ProfileService {
     public void fetchProfiles(Callback<ApiService.ApiResponse> callback) {
         apiService.getProfiles().enqueue(callback);
     }
+
     public void fetchProfilesByName(Callback<ApiService.ApiResponse> callback, String groupName) {
         apiService.getProfilesByGroup(groupName).enqueue(callback);
     }
+
     public void fetchGroups(Callback<ApiService.ApiResponseGroup> callback) {
         apiService.getGroup().enqueue(callback);
     }
 
-    public void startProfile(String profileId, Callback<Profile> callback) {
+    public void closeProfile(String id) {
+        Call<ApiService.OpenProfileResponse> call = apiService.closeProfile(id);
+        call.enqueue(new Callback<ApiService.OpenProfileResponse>() {
+            @Override
+            public void onResponse(Call<ApiService.OpenProfileResponse> call, Response<ApiService.OpenProfileResponse> response) {
+                if (response.isSuccessful()) {
+                    assert response.body() != null;
+                    if (response.body().success) {
+                        System.out.println("Đóng profile thành công");
+                    }
+                }
+            }
 
+            @Override
+            public void onFailure(Call<ApiService.OpenProfileResponse> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
     }
 
     public void saveProfile(Profile profile) {

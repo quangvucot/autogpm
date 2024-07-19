@@ -32,11 +32,12 @@ public class ProfileTask implements Callable<Profile> {
             WebDriverManager webDriverManager = new WebDriverManager();
             // Lấy dữ liệu profile
             Profile profileData = profileService.getProfileData(profile).join();
-            logger.info(profileData.getName() +" Running current port: " + profileData.getRemote_debugging_address());
+            logger.info(profileData.getName() + " Running current port: " + profileData.getRemote_debugging_address());
             logger.info("Running current Debugging: " + profileData.getDriver_path());
             WebDriver driver = webDriverManager.initializeDriver(profileData);
             // Chạy automation cho profile
-            profileAutomation.runAutomation(driver, pass);
+            profileAutomation.runAutomation(driver, pass, profile.getId());
+
             return profileData;
         } catch (Exception e) {
             e.printStackTrace();
