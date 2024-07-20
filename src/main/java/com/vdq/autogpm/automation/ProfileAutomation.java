@@ -116,15 +116,6 @@ public class ProfileAutomation {
     }
 
 
-    // Danh sách các đồng Coin Can Chuyen
-    private Map<String, List<String>> initializeCoinSwaps() {
-        Map<String, List<String>> coinSwaps = new HashMap<>();
-        coinSwaps.put("HONEY", List.of("Bera", "WBERA", "WBTC", "WETH", "DAI"));
-        coinSwaps.put("BERA", List.of("WBERA", "HONEY", "WBTC", "WETH", "DAI", "STGUSDC", "USDT"));
-        return coinSwaps;
-    }
-
-
     private void performSwaps(WebDriver driver, WaitUtils waitUtils) {
         for (Map.Entry<String, List<String>> entry : coinSwaps.entrySet()) {
             String fromCoin = entry.getKey();
@@ -371,12 +362,22 @@ public class ProfileAutomation {
     }
 
     private void goToChromeExtention(WebDriver driver, WaitUtils waitUtils) {
-        driver.get("chrome://extensions");
-        waitUtils.sleepMillis(2000);
-        String idExtention = getIdOfExtention(driver);
-        String urlChrome = "chrome-extension://" + idExtention + "/home.html#onboarding/welcome";
-        driver.get(urlChrome);
-        waitUtils.sleepMillis(1000);
+        try {
+            driver.get("chrome://extensions");
+            waitUtils.sleepMillis(2000);
+            String idExtention = getIdOfExtention(driver);
+            System.out.println("Lay lai id extention mot lan nua");
+            if (idExtention.isEmpty()) {
+                waitUtils.sleepMillis(1000);
+                idExtention = getIdOfExtention(driver);
+            }
+            String urlChrome = "chrome-extension://" + idExtention + "/home.html#onboarding/welcome";
+            driver.get(urlChrome);
+            waitUtils.sleepMillis(1000);
+        } catch (Exception e) {
+            System.out.println("Co loi xay ra o ");
+        }
+
     }
 
     private String getIdOfExtention(WebDriver driver) {
@@ -386,8 +387,6 @@ public class ProfileAutomation {
     }
 
     /*  ---------------------------------------------------------------------------------------*/
-
-
     public void swapCoins(WebDriver driver, String fromCoin, List<String> toCoins, String price, int numSwaps, WaitUtils waitUtils) {
         List<String> randomToCoins = getRandomCoins(toCoins);
         for (String toCoin : randomToCoins) {
@@ -644,30 +643,6 @@ public class ProfileAutomation {
 
     }
 
-    private void confirmTransaction(WebDriver driver, WaitUtils waitUtils) {
-        waitUtils.waitForElementVisible(By.xpath(dialogWattingWalletXpath), 10);
-        if (SeleniumUtils.isElementPresent(driver, dialogWattingWalletXpath)) {
-            System.out.println("Có hiển thị thông báo Watting Transaction");
-            SeleniumUtils.switchToTab(driver, 0);
-            waitUtils.sleepMillis(3000);
-            driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
-            waitUtils.sleepMillis(3000);
-            waitUtils.waitForElementVisible(By.xpath(buttonVerifyOkxXpath), 10);
-
-            if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
-                System.out.println("Có nút xác nhận chuyển tiền bên OKX");
-                waitUtils.sleepMillis(5000);
-                waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
-                SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
-                System.out.println("Đã click vào nút xác nhận chuyển tiền");
-                waitUtils.sleepMillis(5000);
-                SeleniumUtils.switchToTab(driver, 1);
-                waitUtils.sleepMillis(4000);
-                checkTransactionStatus(driver, waitUtils);
-            }
-        }
-    }
-
     private void checkTransactionStatus(WebDriver driver, WaitUtils waitUtils) {
         waitUtils.waitForElementVisible(By.xpath(buttonStatusTransaction), 10);
         if (SeleniumUtils.isElementPresent(driver, buttonStatusTransaction)) {
@@ -698,7 +673,6 @@ public class ProfileAutomation {
                 }
 
             }
-
             waitUtils.sleepMillis(3000);
         }
     }
