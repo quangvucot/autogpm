@@ -34,11 +34,9 @@ public class ExcelUtils {
             while (iterator.hasNext()) {
                 Row currentRow = iterator.next();
                 Cell keyCell = currentRow.getCell(0);
-
                 if (keyCell != null) {
                     String key = getCellValueAsString(keyCell);
                     Map<String, String> rowData = new HashMap<>();
-
                     for (Cell cell : currentRow) {
                         String column = getColumnName(cell.getColumnIndex());
                         String value = getCellValueAsString(cell);

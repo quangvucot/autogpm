@@ -2,9 +2,11 @@ package com.vdq.autogpm.util;
 
 import com.vdq.autogpm.Main;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
 
-import java.io.File;
+import java.io.*;
+import java.util.Properties;
 import java.util.Random;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -13,6 +15,7 @@ import java.util.logging.Logger;
 
 public class Utils {
     private static final Logger logger = Logger.getLogger(Main.class.getName());
+    private static final String CONFIG_FILE = "config.properties";
 
     public static void writelog(String log) {
         String logDir = "C:/ProgramData/MySoftware/logs";
@@ -40,6 +43,7 @@ public class Utils {
         randomValue = Math.round(randomValue * 10.0) / 10.0;
         return randomValue;
     }
+
     public static void showInfoAlert(String title, String headerText, String contentText) {
         showAlert(Alert.AlertType.INFORMATION, title, headerText, contentText);
     }
@@ -60,6 +64,7 @@ public class Utils {
         alert.setContentText(contentText);
         alert.showAndWait();
     }
+
     public static void log(String message) {
         String threadName = Thread.currentThread().getName();
         System.out.println("[" + threadName + "] " + message);
@@ -69,5 +74,29 @@ public class Utils {
         String threadName = Thread.currentThread().getName();
         System.err.println("[" + threadName + "] " + message);
         e.printStackTrace();
+    }
+
+    private void saveTextFieldValue(TextField textField) {
+        Properties properties = new Properties();
+        properties.setProperty("textFieldValue", textField.getText());
+
+        try (OutputStream output = new FileOutputStream(CONFIG_FILE)) {
+            properties.store(output, null);
+            System.out.println("Configuration saved.");
+        } catch (IOException io) {
+            io.printStackTrace();
+        }
+    }
+
+    private void loadTextFieldValue(TextField textField) {
+        Properties properties = new Properties();
+        try (InputStream input = new FileInputStream(CONFIG_FILE)) {
+            properties.load(input);
+            String value = properties.getProperty("textFieldValue", "");
+            textField.setText(value);
+            System.out.println("Configuration loaded.");
+        } catch (IOException io) {
+            io.printStackTrace();
+        }
     }
 }

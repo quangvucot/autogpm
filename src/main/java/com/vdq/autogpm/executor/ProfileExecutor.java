@@ -6,15 +6,22 @@ import java.util.concurrent.*;
 public class ProfileExecutor {
 
     private static final int NUM_THREADS = 5;
-    private final ExecutorService executorService;
+    private ExecutorService executorService;
 
     public ProfileExecutor() {
+        this.executorService = createExecutorService();
+    }
+
+    private ExecutorService createExecutorService() {
         BlockingQueue<Runnable> queue = new LinkedBlockingQueue<>();
-        executorService = new ThreadPoolExecutor(NUM_THREADS, NUM_THREADS,
+        return new ThreadPoolExecutor(NUM_THREADS, NUM_THREADS,
                 0L, TimeUnit.MILLISECONDS, queue);
     }
 
     public ExecutorService getExecutorService() {
+        if (executorService.isShutdown() || executorService.isTerminated()) {
+            restart();
+        }
         return executorService;
     }
 
@@ -22,6 +29,11 @@ public class ProfileExecutor {
         executorService.shutdown();
     }
 
+    public void restart() {
+        if (executorService.isShutdown() || executorService.isTerminated()) {
+            executorService = createExecutorService();
+        }
+    }
 
 
 }

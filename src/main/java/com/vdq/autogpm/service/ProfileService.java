@@ -78,7 +78,6 @@ public class ProfileService {
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<ApiService.OpenProfileResponse> call, Throwable t) {
                 t.printStackTrace();
@@ -86,7 +85,6 @@ public class ProfileService {
         });
 
     }
-
 
     public CompletableFuture<Profile> getProfileData(Profile profile) {
         CompletableFuture<Profile> future = new CompletableFuture<>();

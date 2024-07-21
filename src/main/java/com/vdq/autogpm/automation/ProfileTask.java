@@ -37,7 +37,6 @@ public class ProfileTask implements Callable<Profile> {
             WebDriver driver = webDriverManager.initializeDriver(profileData);
             // Chạy automation cho profile
             profileAutomation.runAutomation(driver, pass, profile.getId());
-
             return profileData;
         } catch (Exception e) {
             e.printStackTrace();

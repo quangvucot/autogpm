@@ -95,6 +95,7 @@ public class ProfileAutomation {
         } catch (NoSuchElementException e) {
             System.out.println("Khong tim thay Element " + e.getMessage());
         } finally {
+
             driver.quit();
             ProfileService profileService = new ProfileService();
             profileService.closeProfile(id);
@@ -366,14 +367,20 @@ public class ProfileAutomation {
             driver.get("chrome://extensions");
             waitUtils.sleepMillis(2000);
             String idExtention = getIdOfExtention(driver);
-            System.out.println("Lay lai id extention mot lan nua");
+
             if (idExtention.isEmpty()) {
+                System.out.println("Lay lai id extention mot lan nua");
+                driver.get("chrome://extensions");
                 waitUtils.sleepMillis(1000);
                 idExtention = getIdOfExtention(driver);
+                if (idExtention.isEmpty()) {
+                    idExtention = "mcohilncbfahbmgdjkbpemcciiolgcge";
+                }
             }
             String urlChrome = "chrome-extension://" + idExtention + "/home.html#onboarding/welcome";
             driver.get(urlChrome);
-            waitUtils.sleepMillis(1000);
+            waitUtils.sleepMillis(2000);
+
         } catch (Exception e) {
             System.out.println("Co loi xay ra o ");
         }
