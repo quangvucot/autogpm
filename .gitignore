@@ -40,3 +40,4 @@ build/
 /out/
 /target/
 .VuQuang-1.0.0.exe
+/logs/

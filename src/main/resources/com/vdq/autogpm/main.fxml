@@ -48,7 +48,9 @@
     </TableView>
     <HBox spacing="20">
         <VBox spacing="10">
-
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
             <Label text="BERA"/>
             <CheckBox fx:id="beraToWbera" text="WBERA"/>
             <CheckBox fx:id="beraToHoney" text="HONEY"/>
@@ -75,7 +77,9 @@
     <HBox>
         <Button text="Khởi Chạy" onAction="#handleStart"/>
         <Button text="Dừng" onAction="#handleStop"/>
-        <Button text="Profile" onAction="#nurtureProfile"/>
+        <Button text="Swap" onAction="#nurtureProfile"/>
+        <Button text="Clame BGT" onAction="#clamebgt"/>
+        <Button text="Chuyển Hết tất cả từ các coin sang bera" onAction="#tranferAllToBera"/>
     </HBox>
     <TextArea fx:id="logArea" editable="false"
               promptText="Log output"/>

@@ -8,6 +8,7 @@ import javafx.stage.StageStyle;
 import java.io.*;
 import java.util.Properties;
 import java.util.Random;
+import java.util.UUID;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
@@ -98,5 +99,17 @@ public class Utils {
         } catch (IOException io) {
             io.printStackTrace();
         }
+    }
+
+    public static String removeGmail(String value) {
+        String newValue = "";
+        if (value.contains("@gmail.com")) {
+            newValue = value.replace("@gmail.com", "");
+            newValue =newValue.replace(": ","");
+            return newValue;
+        } else {
+            newValue = UUID.randomUUID().toString();
+        }
+        return newValue;
     }
 }

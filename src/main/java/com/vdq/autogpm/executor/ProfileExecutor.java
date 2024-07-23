@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.*;
 public class ProfileExecutor {
 
-    private static final int NUM_THREADS = 5;
+    private static final int NUM_THREADS = 10;
     private ExecutorService executorService;
 
     public ProfileExecutor() {

@@ -207,7 +207,6 @@ public class SeleniumUtils {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
             wait.until(ExpectedConditions.elementToBeClickable(element));
-
             // Cuộn phần tử vào trong tầm nhìn nếu cần thiết
             scrollElementIntoView(driver,element);
             Thread.sleep(1000);
