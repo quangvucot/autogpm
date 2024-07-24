@@ -4,9 +4,11 @@ import com.vdq.autogpm.api.Profile;
 import com.vdq.autogpm.service.ProfileService;
 import com.vdq.autogpm.util.LoggerUtil;
 import com.vdq.autogpm.util.Utils;
+import com.vdq.autogpm.util.WindowPositioner;
 import com.vdq.autogpm.webdriver.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
 import java.util.concurrent.Callable;
 import java.util.logging.Logger;
 
@@ -25,6 +27,7 @@ public class ProfileTask implements Callable<Profile> {
         this.profileAutomation = profileAutomation;
         this.pass = okxPassword;
         this.type = type;
+
         LoggerUtil.initLogger(Utils.removeGmail(profile.getName()));
     }
 

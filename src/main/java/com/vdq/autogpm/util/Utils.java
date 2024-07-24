@@ -5,6 +5,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
 
+import java.awt.*;
 import java.io.*;
 import java.util.Properties;
 import java.util.Random;
@@ -105,11 +106,25 @@ public class Utils {
         String newValue = "";
         if (value.contains("@gmail.com")) {
             newValue = value.replace("@gmail.com", "");
-            newValue =newValue.replace(": ","");
+            newValue = newValue.replace(": ", "");
             return newValue;
         } else {
             newValue = UUID.randomUUID().toString();
         }
         return newValue;
+    }
+
+    public String getDimetions() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth();
+        double height = screenSize.getHeight();
+        return width + "," + height;
+    }
+
+    public String getFullDimetions() {
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int width = gd.getDisplayMode().getWidth();
+        int height = gd.getDisplayMode().getHeight();
+        return width + "," + height;
     }
 }

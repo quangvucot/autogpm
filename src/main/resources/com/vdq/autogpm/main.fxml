@@ -80,6 +80,7 @@
         <Button text="Swap" onAction="#nurtureProfile"/>
         <Button text="Clame BGT" onAction="#clamebgt"/>
         <Button text="Chuyển Hết tất cả từ các coin sang bera" onAction="#tranferAllToBera"/>
+        <Button text="Test" onAction="#test"/>
     </HBox>
     <TextArea fx:id="logArea" editable="false"
               promptText="Log output"/>

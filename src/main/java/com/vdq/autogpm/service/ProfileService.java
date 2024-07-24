@@ -63,7 +63,7 @@ public class ProfileService {
     }
 
     public void getProfile(Profile profile) {
-        Call<ApiService.OpenProfileResponse> call = apiService.openProfile(profile.getId());
+        Call<ApiService.OpenProfileResponse> call = apiService.openProfile(profile.getId(),"0.6","","620,800" );
         call.enqueue(new Callback<ApiService.OpenProfileResponse>() {
             @Override
             public void onResponse(Call<ApiService.OpenProfileResponse> call, Response<ApiService.OpenProfileResponse> response) {
@@ -88,7 +88,7 @@ public class ProfileService {
 
     public CompletableFuture<Profile> getProfileData(Profile profile) {
         CompletableFuture<Profile> future = new CompletableFuture<>();
-        Call<ApiService.OpenProfileResponse> call = apiService.openProfile(profile.getId());
+        Call<ApiService.OpenProfileResponse> call = apiService.openProfile(profile.getId(),"0.6","","620,800");
         call.enqueue(new Callback<ApiService.OpenProfileResponse>() {
             @Override
             public void onResponse(Call<ApiService.OpenProfileResponse> call, Response<ApiService.OpenProfileResponse> response) {

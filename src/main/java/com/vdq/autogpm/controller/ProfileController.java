@@ -35,7 +35,6 @@ public class ProfileController {
                     future.complete(profileList);
                 }
             }
-
             @Override
             public void onFailure(Call<ApiService.ApiResponse> call, Throwable t) {
                 logger.info("Vui lòng bật GPM");

@@ -133,7 +133,6 @@ public class ProfileAutomation {
             } else {
                 swapCoins(driver, fromCoin, toCoins, "1", 1, waitUtils, type);
             }
-
         }
     }
 
@@ -153,7 +152,6 @@ public class ProfileAutomation {
         } else {
             System.out.println("Đã truy cập URL: " + currentUrl);
             LoggerUtil.log("Đã truy cập URL: " + currentUrl);
-
         }
         waitUtils.waitForElementVisible(By.xpath(buttonAdressWalletXpath), 5);
 
@@ -163,7 +161,6 @@ public class ProfileAutomation {
             System.out.println("Click into Connect Wallet");
             LoggerUtil.log("Click into Connect Wallet");
             waitUtils.sleepMillis(5000);
-
             if (SeleniumUtils.isElementInShadowDOMPresent(driver, shadowHostSelector, shadowElementSelector)) {
                 System.out.println("Co Dialog Shadow Root");
                 LoggerUtil.log("Co Dialog Shadow Root");
@@ -474,7 +471,6 @@ public class ProfileAutomation {
                 System.out.println("Giá trị coin nhận hiện tại bằng coin nhận mong muốn");
                 LoggerUtil.log("Giá trị coin nhận hiện tại bằng coin nhận mong muốn");
                 enterPrice(driver, price, waitUtils, type != 0, fromCoin, toCoin);
-
                 if (checkNotEnoughtMoney(driver)) {
                     approveTransaction(driver, buttonSwapXpath, waitUtils);
                     checkTransactionStatus(driver, waitUtils);
@@ -872,7 +868,6 @@ public class ProfileAutomation {
         if (SeleniumUtils.isElementPresent(driver, buttonVerifyOkxXpath)) {
             waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
             SeleniumUtils.waitForClickabilityAndClick(driver, buttonVerifyOkxXpath, 10);
-//            SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
         } else {
             driver.get("chrome-extension://mcohilncbfahbmgdjkbpemcciiolgcge/home.html");
             waitUtils.sleepMillis(3000);
@@ -882,7 +877,6 @@ public class ProfileAutomation {
                 LoggerUtil.log("Có nút xác nhận MINT bên OKX");
                 waitUtils.sleepMillis(5000);
                 waitUtils.waitForClickability(By.xpath(buttonVerifyOkxXpath));
-//                SeleniumUtils.findElementByXPath(driver, buttonVerifyOkxXpath).click();
                 SeleniumUtils.waitForClickabilityAndClick(driver, buttonVerifyOkxXpath, 10);
                 System.out.println("Đã click vào nút xác nhận MINT");
                 LoggerUtil.log("Đã click vào nút xác nhận MINT");
@@ -910,6 +904,7 @@ public class ProfileAutomation {
     }
 
     public void clameBGT(WebDriver driver, String pass, String id) {
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WaitUtils waitUtils = new WaitUtils(driver, 10);
         try {
@@ -933,7 +928,6 @@ public class ProfileAutomation {
         final String clameRewards = "//button[text()='Claim Rewards']";
         final String deposit = "//a[contains(@href,'https://bartio.station.berachain.com/gauge/')]";
         driver.get("https://bartio.bex.berachain.com/pools");
-//        loginWalletWithBerachain(driver, waitUtils);
         waitUtils.sleepMillis(4000);
         waitUtils.waitForVisibility(By.xpath(tablePool));
         if (SeleniumUtils.isElementPresent(driver, tablePool)) {
@@ -950,9 +944,36 @@ public class ProfileAutomation {
                     int currentTabIndex = handlesList.size() - 1;
                     SeleniumUtils.switchToTab(driver, currentTabIndex);
                     // In ra số thứ tự của tab hiện tại
-                    SeleniumUtils.findElementByXPath(driver, clameRewards).click();
-                    //            SeleniumUtils.waitForClickabilityAndClick(driver, "//button[text()='Claim Rewards']", 20);
-                    waitUtils.sleepMillis(2000);
+                    try {
+                        waitUtils.sleepMillis(4000);
+                        if (SeleniumUtils.isElementPresent(driver, clameRewards)) {
+                            loginWalletWithBerachain(driver, waitUtils);
+                            SeleniumUtils.waitForClickabilityAndClick(driver, clameRewards, 20);
+                        } else {
+                            int loop = -1;
+                            for (String handle : driver.getWindowHandles()) {
+                                driver.switchTo().window(handle);
+                                String currentUrl = driver.getCurrentUrl();
+                                loop += 1;
+                                if (currentUrl.contains("https://bartio.station.berachain.com/gauge/")) {
+                                    loginWalletWithBerachain(driver, waitUtils);
+                                    SeleniumUtils.waitForClickabilityAndClick(driver, clameRewards, 20);
+                                    currentTabIndex = loop;
+                                    break;
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Khong tim thay duoc element" + e.getMessage());
+                        for (String handle : driver.getWindowHandles()) {
+                            driver.switchTo().window(handle);
+                            String currentUrl = driver.getCurrentUrl();
+                            if (currentUrl.contains("https://bartio.station.berachain.com/gauge/")) {
+                                SeleniumUtils.waitForClickabilityAndClick(driver, clameRewards, 20);
+                                break;
+                            }
+                        }
+                    }
                     switchOKXToVerifyTransClame(driver, waitUtils, currentTabIndex);
                     waitUtils.sleepMillis(2000);
                     checkTransactionStatus(driver, waitUtils);
@@ -963,15 +984,20 @@ public class ProfileAutomation {
                     final String xpathMax = "(//span[@class='cursor-pointer']//span)[1]";
                     final String xpathAddCoinToPool = "//button[text()='Deposit' and not(@type)]";
                     if (SeleniumUtils.isElementPresent(driver, xpathAddPool)) {
+                        LoggerUtil.log("Click vao Add Pool");
                         SeleniumUtils.waitForClickabilityAndClick(driver, xpathAddPool, 20);
                         waitUtils.sleepMillis(5000);
+                        LoggerUtil.log("Click vao Max");
                         SeleniumUtils.waitForClickabilityAndClick(driver, xpathMax, 20);
                         approveTransaction(driver, "", waitUtils);
                         waitUtils.sleepMillis(4000);
+                        LoggerUtil.log("Click vao Deposit");
                         SeleniumUtils.waitForClickabilityAndClick(driver, deposit, 20);
                         waitUtils.sleepMillis(5000);
+                        LoggerUtil.log("Click vao Max");
                         SeleniumUtils.waitForClickabilityAndClick(driver, xpathMax, 20);
                         waitUtils.sleepMillis(5000);
+                        LoggerUtil.log("Click vao xpath add coin to pool");
                         SeleniumUtils.waitForClickabilityAndClick(driver, xpathAddCoinToPool, 20);
                         switchOKXToVerifyTransClame(driver, waitUtils, 1);
                         waitUtils.sleepMillis(2000);
@@ -1031,8 +1057,6 @@ public class ProfileAutomation {
             ProfileService profileService = new ProfileService();
             profileService.closeProfile(id);
         }
-
-//        addSwap("WBERA","HONEY");
     }
 }
 

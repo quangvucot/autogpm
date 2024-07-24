@@ -12,8 +12,8 @@ public interface ApiService {
     @GET("profiles?per_page=1000")
     Call<ApiResponse> getProfiles();
 
-    @GET("profiles/start/{id}?win_scale=0.6&win_size=620,800")
-    Call<OpenProfileResponse> openProfile(@Path("id") String id);
+    @GET("profiles/start/{id}")
+    Call<OpenProfileResponse> openProfile(@Path("id") String id, @Query("win_scale") String winScale, @Query("win_size") String winSize, @Query("win_pos") String winpos );
 
     @GET("groups")
     Call<ApiResponseGroup> getGroup();
